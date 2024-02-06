@@ -8,11 +8,11 @@
     --line-height: 1.2;
     --text-color: #232333;
     --detail-color: #232333be;
-    --link-color: #1a9d77;
+    --link-color: #025ef3;
     --background-color: #fff;
     --border-color: #ffffff;
     --hover-border-color: #ffffff;
-    --hover-background-color: rgba(120, 193, 172, 0.211);
+    --hover-background-color: #025ef31d;
     --hover-scale: 1.0;
 }
 
