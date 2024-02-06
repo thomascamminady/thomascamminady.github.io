@@ -1,0 +1,86 @@
+/* Add CSS styling here */
+
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    color: rgb(95, 109, 123);
+
+
+}
+
+#map {
+    height: 400px;
+    width: 800px;
+    margin: 20px auto;
+    /* Center horizontally */
+
+    margin-top: 20px;
+}
+
+svg {
+    margin: 20px auto;
+    display: block;
+}
+
+.axis path,
+
+
+.line {
+    fill: none;
+    stroke-width: 1.5px;
+}
+
+.grid line {
+    stroke: rgb(95, 109, 123);
+    stroke-opacity: 0.15;
+    shape-rendering: crispEdges;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+.footer {
+    text-align: left;
+    margin: 20px auto;
+    /* Center horizontally */
+    width: 800px;
+    /* Set the width */
+    padding: 0 20px;
+    /* Add padding for left justification */
+    font-size: 16px;
+    color: rgb(95, 109, 123);
+
+}
+
+.footer a {
+    color: #007bff;
+    /* Blue color for links */
+    text-decoration: none;
+}
+
+.footer img {
+    vertical-align: middle;
+    height: 20px;
+}
+
+.chart-button {
+    padding: 10px 20px;
+    /* font-size: 16px; */
+    color: #fff;
+    background-color: rgb(95, 109, 123);
+    /* Default gray color */
+    border: none;
+    border-radius: 5px;
+    margin: 15px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.1s;
+}
+
+.chart-button.active {
+    background-color: #007bff;
+    /* Blue color for the active button */
+}

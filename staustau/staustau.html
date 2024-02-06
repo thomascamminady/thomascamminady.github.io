@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Verkehrsmonitor Balve</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+
+<body>
+  <h1>Verkehrsmonitor Balve</h1>
+  <div id="tooltip" style="opacity: 0; position: absolute; pointer-events: none"></div>
+  <div class="footer">
+    <p>
+      Analysiert ist der Verkehr zwischen den Ortseingangsschildern am
+      Krumpaul, an der Höhle und am Krankenhaus. Die genauen Positionen sind
+      auf der folgenden Karte abgebildet. Die Linien im Vordergrund
+      repräsentieren den heutigen Tag. Die Linien im Hintergrund sind die
+      Daten aus dem Jahr 2024.
+    </p>
+    <p>
+      Verkehrsdaten via Google Distance Matrix API. Mittels Python, Polars für
+      Analyse und D3.js für Visualisierung. Erstellt von Thomas Camminady (<a
+        href="https://www.camminady.dev">Website</a>, <a href="https://github.com/thomascamminady">Github</a>,
+      <a href="https://github.com/thomascamminady/traffic-balve">Source Code</a>,
+      <a href="https://github.com/thomascamminady/traffic-balve-vis">Vis</a>).
+    </p>
+    <p><span id="update-time"></span>.</p>
+  </div>
+  <!-- <div>
+      <img
+        src="assets/map.png"
+        alt="Karte von Balve"
+        width="800"
+        height="400"
+      />
+    </div> -->
+  <div id="map"></div>
+  <script src="script_map.js"></script>
+  <button id="btnChart1" class="chart-button">Reisedauer</button>
+  <button id="btnChart2" class="chart-button">Reisegeschwindigkeit</button>
+  <div id="chart_time" style="display: block"></div>
+  <div id="chart_kph" style="display: none"></div>
+  <script src="script_chart.js"></script>
+</body>
+
+</html>
