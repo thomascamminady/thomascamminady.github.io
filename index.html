@@ -1,102 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thomas Camminady</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thomas Camminady</title>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <link rel="stylesheet" href="assets/style.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            rel="stylesheet"
+        />
+    </head>
 
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <link rel="stylesheet" href="assets/style.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-    <header>
-        <div class="header-content">
-            <h1>Welcome!</h1>
-            <div class="contact-icons">
-                <a href="cv/cv.html">CV</a>
-                <a href="mailto:bitumen-boggier09@icloud.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.camminady.dev"><i class="fas fa-globe"></i></a>
-                <a href="https://github.com/thomascamminady"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/camminady/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=kczWHoQAAAAJ"><i
-                        class="fab fa-google"></i></a>
+    <body>
+        <header>
+            <div class="header-content">
+                <h1>Welcome!</h1>
+                <div class="contact-icons">
+                    <a href="mailto:bitumen-boggier09@icloud.com"
+                        ><i class="fas fa-envelope"></i
+                    ></a>
+                    <a href="cv/cv.html">CV</a>
+                    <a href="https://github.com/thomascamminady"
+                        ><i class="fab fa-github"></i
+                    ></a>
+                    <a href="https://www.linkedin.com/in/camminady/"
+                        ><i class="fab fa-linkedin"></i
+                    ></a>
+                    <a
+                        href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=kczWHoQAAAAJ"
+                        ><i class="fab fa-google"></i
+                    ></a>
+                    <a href="https://www.camminady.dev"
+                        ><i class="fas fa-globe"></i
+                    ></a>
+                </div>
             </div>
-        </div>
-    </header>
-
-    <svg width="960" height="960"></svg>
-    <script>
-        const svg = d3.select("svg"),
-            width = +svg.attr("width"),
-            height = +svg.attr("height");
-
-        const nodes = Array.from({ length: 500 }, () => ({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            radius: 15
-        }));
-
-        // Define the start and end colors for the interpolation.
-        const endColor = "#f35e02";
-        const startColor = "#025ef3";
-
-        // Use d3.interpolateRgb for a smooth transition between colors.
-        // Alternatively, you can use any other suitable interpolator.
-        const colorScale = d3.scaleSequential(t => d3.interpolateRgb(startColor, endColor)(t))
-            .domain([0, 2]); // Adjust based on expected max proximity count
-
-        const simulation = d3.forceSimulation(nodes)
-            .alphaTarget(0.2) // Keep the simulation active
-            .velocityDecay(0.1) // Low friction
-            .force("charge", d3.forceManyBody().strength(-0.001))
-            .force("center", d3.forceCenter(width / 2, height / 2))
-            .force("collide", d3.forceCollide().radius(d => d.radius + 0.5))
-            .force("gravityy", d3.forceY().strength(0.0006).y(height))
-            .force("gravityx", d3.forceX().strength(0.0006).x(width))
-            .on("tick", ticked);
-
-        const circle = svg.selectAll("circle")
-            .data(nodes)
-            .join("circle")
-            .attr("r", d => d.radius)
-
-        function ticked() {
-            circle.attr("cx", d => Math.max(d.radius, Math.min(width - d.radius, d.x)))
-                .attr("cy", d => Math.max(d.radius, Math.min(height - d.radius, d.y)));
-
-
-            circle.style("fill", d => colorScale((d.vx ** 2 + d.vy ** 2) ** 0.5));
-        }
-
-        svg.call(d3.drag()
-            .container(svg.node())
-            .subject(event => simulation.find(event.x, event.y))
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended));
-
-        function dragstarted(event) {
-            if (!event.active) simulation.alphaTarget(0.1).restart();
-            event.subject.fx = event.x;
-            event.subject.fy = event.y;
-        }
-
-        function dragged(event) {
-            event.subject.fx = event.x;
-            event.subject.fy = event.y;
-        }
-
-        function dragended(event) {
-            if (!event.active) simulation.alphaTarget(0);
-            event.subject.fx = null;
-            event.subject.fy = null;
-        }
-    </script>
-
-</body>
-
+        </header>
+    </body>
 </html>
