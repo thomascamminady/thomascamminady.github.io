@@ -1,10 +1,23 @@
-const dataUrl =
-    "https://raw.githubusercontent.com/thomascamminady/traffic-balve/main/data/summary.csv";
+
+// Change the URL to the location of your ZIP file
+const dataUrl = "https://raw.githubusercontent.com/thomascamminady/traffic-balve/main/data/summary.csv.zip";
 
 fetch(dataUrl)
-    .then((response) => response.text())
-    .then((data) => {
-        const parsedData = d3.csvParse(data, d3.autoType);
+    .then((response) => {
+        if (!response.ok) throw new Error('Network response was not ok.');
+        return response.blob();
+    })
+    .then(JSZip.loadAsync) // Use JSZip to read the ZIP file
+    .then((zip) => {
+        // Assuming there's only one file in the ZIP and you know its name,
+        // or you can adjust logic to find the right file
+        const csvFileName = Object.keys(zip.files)[0];
+        return zip.file(csvFileName).async("text"); // Get the file content as text
+    })
+    .then((csvText) => {
+        // The rest of your processing logic here...
+        const parsedData = d3.csvParse(csvText, d3.autoType);
+        // Process parsedData as before
         const newestTimestamp = d3.max(parsedData, (d) =>
             new Date(d.datetime).getTime()
         );
@@ -15,7 +28,7 @@ fetch(dataUrl)
         const today = d3.timeFormat("%Y-%m-%d")(new Date());
         parsedData.forEach((d) => {
             d.parsedTime = d3.timeParse("%H:%M:%S")(
-                d.datetime.split("T")[1].split(".")[0]
+                d.datetime.split(" ")[1].split(".")[0]
             );
             d.parsedDate = d3.timeFormat("%Y-%m-%d")(new Date(d.datetime));
             d.durationInTrafficMinutes = d.duration_in_traffic_s / 60; // Convert seconds to minutes
@@ -23,17 +36,7 @@ fetch(dataUrl)
             d.kph = d.distance_m / 1000 / (d.duration_in_traffic_s / 3600);
             d.ziel = "Ziel: " + d.to;
         });
-        const criterias = Array.from(new Set(parsedData.map((d) => d.route)));
-        criterias.forEach((criteria) => {
-            createObservablePlotChart(
-                parsedData,
-                criteria,
-                "kph",
-                "#chart_kph",
-                "Reisegeschwindigkeit (km/h)",
-                [10, 50]
-            );
-        });
+        const criterias = Array.from(new Set(parsedData.map((d) => d.route))).slice(0, 3);
         criterias.forEach((criteria) => {
             createObservablePlotChart(
                 parsedData,
@@ -44,17 +47,28 @@ fetch(dataUrl)
                 [2, 8]
             );
         });
+        criterias.forEach((criteria) => {
+            createObservablePlotChart(
+                parsedData,
+                criteria,
+                "kph",
+                "#chart_kph",
+                "Reisegeschwindigkeit (km/h)",
+                [10, 50]
+            );
+
+        });
 
         document.getElementById("btnChart1").addEventListener("click", function () {
-            document.getElementById("chart_time").style.display = "block";
-            document.getElementById("chart_kph").style.display = "none";
+            document.getElementById("chart_kph").style.display = "block";
+            document.getElementById("chart_time").style.display = "none";
             document.getElementById("btnChart1").classList.add("active");
             document.getElementById("btnChart2").classList.remove("active");
         });
 
         document.getElementById("btnChart2").addEventListener("click", function () {
-            document.getElementById("chart_time").style.display = "none";
-            document.getElementById("chart_kph").style.display = "block";
+            document.getElementById("chart_kph").style.display = "none";
+            document.getElementById("chart_time").style.display = "block";
             document.getElementById("btnChart1").classList.remove("active");
             document.getElementById("btnChart2").classList.add("active");
         });
@@ -122,7 +136,9 @@ function createObservablePlotChart(
                     x: "parsedTime",
                     y: field,
                     stroke: "to",
-                    opacity: (d) => (d.is_today ? 1 : 0.12),
+                    opacity: (d) => (d.is_today ? 1 : 0.08),
+                    strokeWidth: (d) => (d.is_today ? 3 : 1)
+
                 })
             ),
 
@@ -130,7 +146,7 @@ function createObservablePlotChart(
                 x: "parsedTime",
                 y: field,
                 fill: "to",
-                r: 2,
+                r: 4,
                 tip: true,
             }),
 
