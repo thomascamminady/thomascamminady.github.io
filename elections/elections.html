@@ -141,13 +141,14 @@
                                 },
                                 y2: { field: "y2" },
                             },
+                            name: "view_4",
                             transform: [
                                 { filter: "(datum.weight > 50)" },
                                 {
                                     lookup: "party",
                                     from: {
                                         data: {
-                                            name: "data-97c9b9adaf41d2294d292619e0fea7d8",
+                                            name: "data-99339dfee5e3ca2e7b183c386b8c7183",
                                         },
                                         key: "party",
                                         fields: ["x", "y", "label"],
@@ -158,13 +159,13 @@
                                     as: ["x2", "y2", "label2"],
                                     from: {
                                         data: {
-                                            name: "data-97c9b9adaf41d2294d292619e0fea7d8",
+                                            name: "data-99339dfee5e3ca2e7b183c386b8c7183",
                                         },
                                         key: "party",
                                         fields: ["x", "y", "label"],
                                     },
                                 },
-                                { filter: { param: "param_20", empty: true } },
+                                { filter: { param: "param_3", empty: true } },
                             ],
                         },
                         {
@@ -184,7 +185,7 @@
                                                     "Left/Eco",
                                                     "Center",
                                                     "???",
-                                                    "Nazis",
+                                                    "Right/Nazis",
                                                 ],
                                                 range: [
                                                     "red",
@@ -199,14 +200,14 @@
                                                 "Left/Eco",
                                                 "Center",
                                                 "???",
-                                                "Nazis",
+                                                "Right/Nazis",
                                             ],
                                             title: "Cluster ID",
                                             type: "nominal",
                                         },
                                         size: {
                                             condition: {
-                                                param: "param_20",
+                                                param: "param_3",
                                                 value: 300,
                                                 empty: true,
                                             },
@@ -225,7 +226,7 @@
                                             type: "quantitative",
                                         },
                                     },
-                                    name: "view_20",
+                                    name: "view_3",
                                 },
                                 {
                                     mark: {
@@ -240,7 +241,7 @@
                                         color: { value: "#333333" },
                                         opacity: {
                                             condition: {
-                                                param: "param_20",
+                                                param: "param_3",
                                                 value: 1.0,
                                                 empty: true,
                                             },
@@ -266,21 +267,27 @@
                                 },
                             ],
                             data: {
-                                name: "data-97c9b9adaf41d2294d292619e0fea7d8",
+                                name: "data-99339dfee5e3ca2e7b183c386b8c7183",
                             },
                         },
                     ],
                     height: 900,
                     params: [
                         {
-                            name: "param_20",
+                            name: "param_3",
                             select: {
                                 type: "point",
                                 fields: ["party"],
                                 nearest: true,
                                 on: "pointerover",
                             },
-                            views: ["view_20"],
+                            views: ["view_3"],
+                        },
+                        {
+                            name: "param_4",
+                            select: { type: "interval", encodings: ["x", "y"] },
+                            bind: "scales",
+                            views: ["view_4"],
                         },
                     ],
                     title: {
@@ -3872,7 +3879,7 @@
                                 weight: 79,
                             },
                         ],
-                        "data-97c9b9adaf41d2294d292619e0fea7d8": [
+                        "data-99339dfee5e3ca2e7b183c386b8c7183": [
                             {
                                 party: "CDU / CSU",
                                 x: 3.903,
@@ -3895,7 +3902,7 @@
                                 party: "AfD",
                                 x: 4.401,
                                 y: -2.23,
-                                label: "Nazis",
+                                label: "Right/Nazis",
                             },
                             {
                                 party: "DIE LINKE",
@@ -3961,7 +3968,7 @@
                                 party: "HEIMAT",
                                 x: 4.306,
                                 y: -2.273,
-                                label: "Nazis",
+                                label: "Right/Nazis",
                             },
                             {
                                 party: "TIERSCHUTZ hier!",
@@ -3985,7 +3992,7 @@
                                 party: "B\u00fcndnis C",
                                 x: 4.395,
                                 y: -2.668,
-                                label: "Nazis",
+                                label: "Right/Nazis",
                             },
                             {
                                 party: "PdH",
@@ -4021,7 +4028,7 @@
                                 party: "ABG",
                                 x: 4.187,
                                 y: -2.177,
-                                label: "Nazis",
+                                label: "Right/Nazis",
                             },
                             {
                                 party: "dieBasis",
@@ -4058,7 +4065,7 @@
                                 party: "PDV",
                                 x: 4.36,
                                 y: -2.281,
-                                label: "Nazis",
+                                label: "Right/Nazis",
                             },
                             {
                                 party: "PdF",
