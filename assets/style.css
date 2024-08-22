@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
-
 :root {
-    --font-family: 'Nunito';
-    --font-size: 16px;
+    --font-family: 'Arial';
+    --font-size: 18px;
     --line-height: 1.2;
     --text-color: #232333;
     --detail-color: #232333be;
-    --link-color: #025ef3;
+    --link-color: #306ed3;
     --background-color: #fff;
     --border-color: #ffffff;
     --hover-border-color: #ffffff;
