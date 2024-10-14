@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Syntax Highlighting Example</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Code block with Python syntax and line numbers -->
+    <pre class="line-numbers"><code class="language-python">
+"""Polars pipes for the performance management chart."""
+
+import polars as pl
+from polars.exceptions import InvalidOperationError
+
+
+def drop_rows_that_are_all_null(_df: pl.DataFrame) -> pl.DataFrame:
+    """Drop rows that are all null."""
+    return _df.filter(~pl.all_horizontal(pl.all().is_null()))
+
+
+def drop_columns_that_are_all_null(_df: pl.DataFrame) -> pl.DataFrame:
+    """Drop columns that are all null."""
+    return _df[[s.name for s in _df if not (s.null_count() == _df.height)]]
+
+
+def convert_dtypes_to_float_if_possible(_df: pl.DataFrame) -> pl.DataFrame:
+    """Convert the data types to float if possible."""
+    for col in _df.columns:
+        try:
+            _df = _df.with_columns(pl.col(col).cast(pl.Float64))
+        except InvalidOperationError:
+            pass
+
+    return _df
+
+
+def convert_times_to_datetime(_df: pl.DataFrame) -> pl.DataFrame:
+    """Convert the times to datetime."""
+    if "timestamp" in _df.columns:
+        _df = _df.with_columns(pl.col("timestamp").str.to_datetime())
+    if "start_time" in _df.columns:
+        _df = _df.with_columns(pl.col("start_time").str.to_datetime())
+    if "created_at" in _df.columns:
+        _df = _df.with_columns(pl.col("start_time").str.to_datetime())
+    if "updated_at" in _df.columns:
+        _df = _df.with_columns(pl.col("start_time").str.to_datetime())
+    return _df
+
+
+def cast_time_in_zone_string_to_list_of_float(
+    _df: pl.DataFrame,
+) -> pl.DataFrame:
+    """Cast the time in zone string to a list of floats."""
+    if "time_in_hr_zone_sec" in _df.columns:
+        _df = _df.with_columns(
+            pl.col("time_in_hr_zone_sec")
+            .str.split("|")
+            .cast(pl.List(pl.Float64))
+        )
+    if "time_in_pwr_zone_sec" in _df.columns:
+        _df = _df.with_columns(
+            pl.col("time_in_pwr_zone_sec")
+            .str.split("|")
+            .cast(pl.List(pl.Float64))
+        )
+    return _df
+
+
+def try_utf8_promotion(_df: pl.DataFrame) -> pl.DataFrame:
+    """Try to promote string datatypes to datetimes, ints, or floats."""
+    for col in _df.columns:
+        if _df[col].dtype != pl.Utf8:
+            continue
+
+        _df, _success = _to_datetime(_df, col)
+        if _success:
+            continue
+
+        _df, _success = _to_numeric(_df, col, pl.Int64)
+        if _success:
+            continue
+
+        _df, _success = _to_numeric(_df, col, pl.Float64)
+
+    return _df
+
+
+def _to_datetime(_df: pl.DataFrame, col: str) -> tuple[pl.DataFrame, bool]:
+    for format in [
+        "%B %d, %Y, %I:%M %p",  # e.g. "February 22, 2023, 11:56 AM"
+        "%Y-%m-%d %H:%M:%S",
+        "%Y-%m-%dT%H:%M:%S%.fZ",  # iso format
+    ]:
+        try:
+            _df = _df.with_columns(pl.col(col).str.to_datetime(format=format))
+            return _df, True
+        except InvalidOperationError:
+            pass
+    return _df, False
+
+
+def _to_numeric(
+    _df: pl.DataFrame, col: str, dtype: pl.datatypes.classes.DataTypeClass
+) -> tuple[pl.DataFrame, bool]:
+    try:
+        _df = _df.with_columns(pl.col(col).str.replace_all(",", "").cast(dtype))
+        return _df, True
+    except InvalidOperationError:
+        return _df, False
+
+    </code></pre>
+
+    <!-- Prism.js script for syntax highlighting and line numbers -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+
+</html>
