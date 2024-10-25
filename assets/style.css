@@ -1,5 +1,5 @@
 :root {
-    --font-family: 'Arial';
+    --font-family: 'Arial', sans-serif;
     --font-size: 18px;
     --line-height: 1.2;
     --text-color: #232333;
@@ -25,7 +25,8 @@ body {
 
 header,
 section {
-    margin-top: em;
+    margin-top: 1em;
+    /* Fixed from 'em' to '1em' */
     margin-bottom: 2em;
 }
 
@@ -44,9 +45,7 @@ a:hover {
     border-bottom: 3px solid;
     /* font-weight: bolds; */
     /* background-color: var(--hover-background-color); */
-
 }
-
 
 .entry {
     margin-bottom: 0.2em;
@@ -75,7 +74,8 @@ a:hover {
 ul {
     padding-left: 20px;
     margin: 0;
-    padding: 20;
+    padding: 20px;
+    /* Added 'px' to padding */
     list-style-type: square;
 }
 
@@ -154,4 +154,64 @@ h1 {
 header {
     padding: 10px 0;
     /* Adds some vertical padding for better spacing */
+}
+
+/* --- New Styles for Profile Section --- */
+
+.profile-section {
+    margin-top: 20px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    /* Aligns items to the top */
+    gap: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    /* Blue border around the image */
+    /* Adjust position as needed */
+    left: 10px;
+    /* Adjust position as needed */
+    object-fit: cover;
+
+}
+
+.profile-description {
+    max-width: 600px;
+}
+
+.profile-description p {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    line-height: 1.5;
+    /* Improved readability */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-description {
+        text-align: center;
+    }
+}
+
+
+
+.underline-blue {
+    text-decoration: underline;
+    text-decoration-color: #007bff;
+    text-decoration-thickness: 3px;
 }
