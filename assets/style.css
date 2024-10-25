@@ -215,3 +215,8 @@ header {
     text-decoration-color: #007bff;
     text-decoration-thickness: 3px;
 }
+
+.profile-section {
+    padding-top: 50px;
+    /* Adjust the value as needed */
+}
