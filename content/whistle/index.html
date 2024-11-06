@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            /* Add space between the iframes */
+            justify-content: center;
+            padding: 20px;
+        }
+
+        iframe {
+            border: none;
+        }
+
+        .iframe-container {
+            flex: 1;
+            min-width: 45%;
+            /* Ensure they don't get too small */
+            height: 600px;
+        }
+
+        /* Optional: you can adjust the iframe height for each one as needed */
+    </style>
+</head>
+
+<body>
+    <section class="iframe-container">
+        <iframe src="body_composition.html" width="110%" height="100%"></iframe>
+    </section>
+
+    <section class="iframe-container">
+        <iframe src="weekly_milage.html" width="100%" height="800px"></iframe>
+    </section>
+
+</body>
+
+</html>
