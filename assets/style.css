@@ -75,8 +75,6 @@ a:hover {
     /* color gra */
     color: var(--light-gray);
     font-size: 1em;
-
-
 }
 
 .entry-content h3,
@@ -113,7 +111,6 @@ li {
     border-color: var(--hover-border-color);
     background-color: var(--hover-background-color);
     transform: scale(var(--hover-scale));
-
 }
 
 code {
@@ -198,7 +195,6 @@ header {
     left: 10px;
     /* Adjust position as needed */
     object-fit: cover;
-
 }
 
 .profile-description {
@@ -223,8 +219,6 @@ header {
         text-align: center;
     }
 }
-
-
 
 .underline-blue {
     text-decoration: underline;
@@ -290,4 +284,10 @@ header {
         font-size: 1.2em;
         /* Adjust section title size for printing */
     }
+}
+
+/* Add padding to all entries */
+article.entry {
+    padding-bottom: 1em;
+    /* Adjust the value as needed */
 }
