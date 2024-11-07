@@ -1,9 +1,10 @@
 :root {
     --font-family: 'Arial', sans-serif;
-    --font-size: 18px;
+    --font-size: 16px;
     --line-height: 1.2;
     --text-color: #232333;
     --detail-color: #232333be;
+    --light-gray: #acacac;
     --link-color: #306ed3;
     --background-color: #fff;
     --border-color: #ffffff;
@@ -19,7 +20,7 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     padding: 20px;
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -47,28 +48,42 @@ a:hover {
     /* background-color: var(--hover-background-color); */
 }
 
-.entry {
-    margin-bottom: 0.2em;
-    border: 5px solid var(--border-color);
-    border-radius: 10px;
-    padding: 3px;
-    transition: border-color 0s ease, background-color 0s ease, transform 0s ease;
-}
-
 .entry-details {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    /* Align items vertically */
     margin-bottom: 0.5em;
     color: var(--detail-color);
 }
 
 .entry-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* Center content vertically */
 }
 
 .details {
     text-align: right;
     white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* color gra */
+    color: var(--light-gray);
+    font-size: 1em;
+
+
+}
+
+.entry-content h3,
+.entry-content p,
+.details p {
+    margin: .2em 0;
+    /* Reduce the margin between elements */
 }
 
 ul {
@@ -98,6 +113,7 @@ li {
     border-color: var(--hover-border-color);
     background-color: var(--hover-background-color);
     transform: scale(var(--hover-scale));
+
 }
 
 code {
@@ -219,4 +235,59 @@ header {
 .profile-section {
     padding-top: 50px;
     /* Adjust the value as needed */
+}
+
+@media print {
+    body {
+        font-size: 12px;
+        /* Adjust the font size for printing */
+        line-height: 1.4;
+        /* Adjust the line height for printing */
+        max-width: 80%;
+        /* Use only 80% of the width */
+        margin: 0 auto;
+        /* Center the content */
+        padding: 0;
+        /* Remove padding for printing */
+    }
+
+    header,
+    section {
+        margin-top: 0.5em;
+        /* Adjust margins for printing */
+        margin-bottom: 1em;
+        /* Adjust margins for printing */
+    }
+
+    .entry-details {
+        margin-bottom: 0.3em;
+        /* Adjust margin between entries for printing */
+    }
+
+    .entry-content h3,
+    .entry-content p,
+    .details p {
+        margin: 0.1em 0;
+        /* Reduce the margin between elements for printing */
+    }
+
+    .profile-pic {
+        width: 100px;
+        /* Adjust the profile picture size for printing */
+        height: 100px;
+        /* Adjust the profile picture size for printing */
+    }
+
+    .profile-description p {
+        margin-bottom: 10px;
+        /* Adjust paragraph spacing for printing */
+    }
+
+    .experience-title,
+    .education-title,
+    .skills-title,
+    .languages-title {
+        font-size: 1.2em;
+        /* Adjust section title size for printing */
+    }
 }
