@@ -1,11 +1,11 @@
 :root {
     --font-family: 'Arial', sans-serif;
-    --font-size: 16px;
+    --font-size: 17px;
     --line-height: 1.2;
-    --text-color: #232333;
+    --text-color: #2f2f41;
     --detail-color: #232333be;
     --light-gray: #acacac;
-    --link-color: #306ed3;
+    --link-color: #2a6fdf;
     --background-color: #fff;
     --border-color: #ffffff;
     --hover-border-color: #ffffff;
@@ -222,8 +222,8 @@ header {
 
 .underline-blue {
     text-decoration: underline;
-    text-decoration-color: #007bff;
-    text-decoration-thickness: 3px;
+    text-decoration-color: #007bffd7;
+    text-decoration-thickness: 5px;
 }
 
 .profile-section {
