@@ -5,6 +5,7 @@ style: ../custom-style.css
 
 ---
 
+# Logitech MX Mechanical Mini for Mac: Issues with M1 Mac
 
 
 About two month ago, I bought a Logitech MX Mechanical Mini for Mac and it worked like a charm with my previous Intel Macbook Pro (2019).
