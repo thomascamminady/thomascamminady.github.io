@@ -4,6 +4,12 @@ toc: false
 style: ../custom-style.css
 
 ---
+# Similarity between German parties for the EU elections 2024
+
+Based on their Wahl-O-Mat answers, crawled from www.wahl-o-mat.de (file: `module_definition.js`).
+Embedding via t-SNE, clustering via agglomerative clustering, both using `scikit-learn`.
+
+Source code and data on [Github](https://github.com/thomascamminady/wahl_o_mat_2024).
 
 ```js
 vl.render({
@@ -37,8 +43,8 @@ vl.render({
                 labelFontWeight: "normal",
             },
             view: {
-                height: 800,
-                width: 800,
+                height: 500,
+                width: 500,
                 strokeWidth: 0,
                 fill: "white",
                 stroke: null,
@@ -258,8 +264,8 @@ vl.render({
                 data: {
                     name: "data-99339dfee5e3ca2e7b183c386b8c7183",
                 },
-                height: 800,
-                width: 800,
+                height: 500,
+                width: 500,
             },
             {
                 hconcat: [
@@ -440,13 +446,10 @@ vl.render({
         },
         title: {
             text: [
-                "Similarity between German parties for the EU elections 2024",
+
             ],
             subtitle: [
-                "Based on their Wahl-O-Mat answers, crawled from www.wahl-o-mat.de (file: module_definition.js).",
-                "Embedding via t-SNE, clustering via agglomerative clustering, both using scikit-learn.",
-                "Source code and data: https://github.com/thomascamminady/wahl_o_mat_2024.",
-                "Author: Thomas Camminady",
+
             ],
             anchor: "start",
             subtitlePadding: 10,

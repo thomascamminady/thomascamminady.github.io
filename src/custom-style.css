@@ -1,16 +1,16 @@
 @import url("observablehq:default.css");
 @import url("observablehq:theme-air.css");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
 
 :root {
     --theme-foreground-focus: rgb(28, 125, 205);
-    --theme-font-family-monospace: 'JetBrains Mono', monospace;
 }
 
 /* Apply monospace font only to the sidebar */
 #observablehq-sidebar {
     font-family: var(--theme-font-family-monospace);
-    font-size: 0.9em;
+    font-family: sans-serif;
+
+    font-size: 0.8em;
     background-color: white;
 }
 
