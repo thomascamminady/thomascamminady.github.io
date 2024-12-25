@@ -3,14 +3,24 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
 
 :root {
-    --theme-foreground-focus: green;
+    --theme-foreground-focus: rgb(28, 125, 205);
     --theme-font-family-monospace: 'JetBrains Mono', monospace;
 }
 
 /* Apply monospace font only to the sidebar */
 #observablehq-sidebar {
     font-family: var(--theme-font-family-monospace);
+    font-size: 0.9em;
+    background-color: white;
 }
+
+#observablehq-sidebar>ol:first-child::before {
+    content: "";
+    position: absolute;
+    inset: 0 -0.5rem;
+    background: white;
+}
+
 
 /* Ensure the rest of the page keeps its default or preferred font */
 body,
