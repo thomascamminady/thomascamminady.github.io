@@ -12,6 +12,7 @@ export default {
     {
       name: "Posts",
       pages: [
+        { name: "2024-12-30 - Storytelling with my personal running data", path: "/posts/running-history" },
         { name: "2024-06-30 - EU Elections", path: "/posts/elections" },
         { name: "2023-03-21 - What I think about when I run", path: "/posts/running" },
         { name: "2023-03-05 - Polars vs. Pandas", path: "/posts/polars-pandas" },
