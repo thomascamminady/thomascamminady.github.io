@@ -20,13 +20,6 @@ export default {
 
       ]
     },
-    {
-      name: "Drafts",
-      pages: [
-        { name: "Tree", path: "/posts/tree" },
-
-      ]
-    }
   ],
 
   // Content to add to the head of the page, e.g. for a favicon:
