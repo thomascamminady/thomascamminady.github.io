@@ -19,6 +19,13 @@ export default {
         { name: "2023-02-22 - Logitech MX Mechanical Mini for Mac: Issues with M1 Mac", path: "/posts/logitech" },
 
       ]
+    },
+    {
+      name: "Drafts",
+      pages: [
+        { name: "Tree", path: "/posts/tree" },
+
+      ]
     }
   ],
 
