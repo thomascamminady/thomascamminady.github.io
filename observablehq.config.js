@@ -31,8 +31,8 @@ export default {
   // theme: "default", // try "light", "dark", "slate", etc.
   // header: "", // what to show in the header (HTML)
   footer: "",
-  sidebar: true, // whether to show the sidebar
-  toc: true, // whether to show the table of contents
+  sidebar: false, // whether to show the sidebar
+  toc: false, // whether to show the table of contents
   pager: false, // whether to show previous & next links in the footer
   // output: "docs", // path to the output root for build
   // search: true, // activate search
