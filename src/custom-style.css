@@ -21,10 +21,16 @@
     background: white;
 }
 
-
-/* Ensure the rest of the page keeps its default or preferred font */
 body,
 html {
     font-family: sans-serif;
     /* Replace 'sans-serif' with your preferred font */
+    margin: 0;
+    height: 100%;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    font-size: 1.1em;
+    padding: 0;
+    margin: 10%;
 }
