@@ -7,7 +7,6 @@ readme = "README.md"
 packages = [{include = "thomascamminady"}]
 
 
-
 [tool.poetry.dependencies]
 python = "3.13.*"
 altair = "^5.5.0"
