@@ -7,8 +7,21 @@ style: custom-style.css
 
 Hi, I'm Thomas.
 
-I'm an algorithm developer & data scientist working at Wahoo Fitness, with a PhD in applied mathematics from the Karlsruhe Institute of Technology. I studied Computational Engineering Science at RWTH Aachen University. 
+I'm an algorithm developer & data scientist working at [Wahoo Fitness](http://wahoofitness.com), with a [PhD](https://publikationen.bibliothek.kit.edu/1000128846) in applied mathematics from the Karlsruhe Institute of Technology. I studied Computational Engineering Science at RWTH Aachen University. 
 
 My hobbies are running and starting new Github projects that never make it out of coding purgatory.
 
-You can have a look at my [Github](https://github.com/thomascamminady) profile, check out my profile on  [LinkedIn](https://www.linkedin.com/in/camminady/), my [CV](https://camminady.dev/cv), or just send me a [mail](mailto:scarab73_tutors@icloud.com).
+### Projects
+
+Here's a collection of some of the stuff I've been working on, listed in no particular order.
+
+* [EU election analysis](https://camminady.dev/posts/elections)
+* [Traffic analysis](https://staustau.de)
+* [Le Tour de France](https://github.com/thomascamminady/LeTourDataSet)
+* [dicopal, a collection of colors](https://camminady.dev/dicopal/)
+* [KI & Bias](https://camminady.dev/scienceforfuture2023/scienceforfuture2023.html#/title-slide)
+* [Aus groß mach klein](https://camminady.dev/gross-mach-klein/)
+
+### Contact
+
+You can have a look at my [CV](https://camminady.dev/cv), check out my profile on [LinkedIn](https://www.linkedin.com/in/camminady/) or [Github](https://github.com/thomascamminady), or just send me a [mail](mailto:scarab73_tutors@icloud.com).

@@ -27,10 +27,11 @@ html {
     /* Replace 'sans-serif' with your preferred font */
     margin: 0;
     height: 100%;
+    width: 60%;
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
     font-size: 1.1em;
     padding: 0;
-    margin: 10%;
+    margin: 5%;
 }
