@@ -24,14 +24,10 @@
 body,
 html {
     font-family: sans-serif;
-    /* Replace 'sans-serif' with your preferred font */
-    margin: 0;
-    height: 100%;
-    width: 60%;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    height: 80%;
+    width: 80%;
     font-size: 1.1em;
-    padding: 0;
-    margin: 5%;
+    margin-left: 20px;
+    margin-top: 20px;
+
 }
