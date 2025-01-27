@@ -7,7 +7,7 @@ style: custom-style.css
 
 # CV
 
-Last updated: December 2024
+Last updated: January 2025
 
 # Experience
 
