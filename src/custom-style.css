@@ -25,10 +25,11 @@ body,
 html {
     font-family: 'Source Sans Pro', sans-serif;
     height: 80%;
-    width: 100%;
+    width: 80%;
     font-size: 1.em;
     font-weight: 500;
     margin-left: 20px;
     margin-top: 20px;
-
+    /* text should be justified */
+    text-align: justify;
 }
