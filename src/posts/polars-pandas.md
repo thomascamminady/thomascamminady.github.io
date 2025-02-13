@@ -3,7 +3,7 @@ toc: false
 style: ../assets/style.css
 
 ---
-<script data-goatcounter="https://drtc.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://drtc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
 # Polars vs. Pandas
 
