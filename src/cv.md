@@ -3,9 +3,13 @@ layout: page
 title: CV
 permalink: /cv/
 style: custom-style.css
+sidebar: false
+toc: false
 ---
 
-# CV Thomas Camminady
+# Curriculum Vitae
+
+Dr. rer. nat. Thomas Camminady
 
 [thomas@camminady.dev](mailto:thomas@camminady.dev) ·
 [camminady.dev](https://camminady.dev) ·
@@ -120,7 +124,6 @@ Version control (git, Github), CI/CD, modern testing frameworks, proficiency wit
 
 * Collaborator in the Computational and Mathematical Modeling Program (KIT University), developing programs that teach high-school and entry-level university students the importance of mathematical modeling for real-world applications.
 * Publications in the (mathematical) didactical sciences, aiming at bringing mathematical modeling to the German Abitur.
-
 
 ## Publications
 
