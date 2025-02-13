@@ -1,1 +1,1 @@
-[https://camminady.dev](https://camminady.dev)
+[camminady.dev](https://camminady.dev)
