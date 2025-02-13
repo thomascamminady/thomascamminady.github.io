@@ -1,6 +1,6 @@
 ---
 toc: false
-style: custom-style.css
+style: assets/style.css
 ---
 
 # Hello!

@@ -2,11 +2,12 @@
 layout: page
 title: Projects
 permalink: /projects/
-style: custom-style.css
+style: assets/style.css
 
 ---
 
 # Projects
+* [I like colors](https://camminady.dev/posts/colors)
 * [EU election analysis](https://camminady.dev/posts/elections)
 * [Traffic analysis](https://staustau.de)
 * [Le Tour de France](https://github.com/thomascamminady/LeTourDataSet)

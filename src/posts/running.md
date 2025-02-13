@@ -1,14 +1,13 @@
 ---
 title: Running
 toc: false
-style: ../custom-style.css
+style: ../assets/style.css
 
 ---
 
 # What I think about when I run
 
 I'm just some random guy who likes to run and was good at an amateur level and now still runs some 4000k a year. Here are some thoughts I wanted to write down. Mostly to just dump the content from my brain, but also to counter other people's "argument" that running is stupid (okay maybe sometimes it is) and boring (I literally never thought "oh damn, I am really bored" while running).  Thoughts in no particular order.
-
 
 1. Everything about this sucks, I am hurting, it is raining, this is so stupid.
 2. Everything about this still sucks, I am only doing this because running is basically an addiction and what will my 20 "friends" on Strava think if a mediocre runner like me doesn't run his 10k in a 5min/k pace.

@@ -2,7 +2,7 @@
 layout: page
 title: CV
 permalink: /cv/
-style: custom-style.css
+style: assets/style.css
 sidebar: false
 toc: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: Storytelling with my personal running data
 toc: false
-style: ../custom-style.css
+style: ../assets/style.css
 ---
 
 # Storytelling with my personal running data

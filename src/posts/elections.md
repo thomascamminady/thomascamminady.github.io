@@ -1,7 +1,8 @@
+
 ---
 title: Elections
 toc: false
-style: ../custom-style.css
+style: ../assets/style.css
 
 ---
 # Similarity between German parties for the EU elections 2024
@@ -7396,3 +7397,5 @@ vl.render({
     }
 })
 ```
+
+
