@@ -5,11 +5,13 @@ permalink: /cv/
 style: custom-style.css
 ---
 
-# CV
+# CV Thomas Camminady
 
-Last updated: January 2025
+[thomas@camminady.dev](mailto:thomas@camminady.dev) ·
+[camminady.dev](https://camminady.dev) ·
+[github.com/thomascamminady](https://github.com/thomascamminady)
 
-# Experience
+## Experience
 
 ### Algorithm Developer
 
@@ -63,7 +65,8 @@ Last updated: January 2025
 
 * Automation of UAV airfoil shape optimization using mesh adjoints.
 * Numerical simulations with in-house tools and the adjoint code of the German Aerospace Center.
-# Education
+
+## Education
 
 ### Dr. rer. nat. in Applied Mathematics
 
@@ -73,23 +76,23 @@ Last updated: January 2025
 
 Thesis: *Theory, models, and numerical methods for classical and non-classical transport.*
 
-### Master of Science in CES
+### Master of Science in Computational Engineering Science
 
 **[RWTH Aachen University](https://www.rwth-aachen.de)**
 
-*10/2013 - 3/2015, Aachen, Germany*
+*10/2013 - 03/2015, Aachen, Germany*
 
 Thesis: *Theory and application of numerical methods for fractional diffusion equations.*
 
-### Bachelor of Science in CES
+### Bachelor of Science in Computational Engineering Science
 
 **[RWTH Aachen University](https://www.rwth-aachen.de)**
 
-*10/2009 - 9/2013, Aachen, Germany*
+*10/2009 - 09/2013, Aachen, Germany*
 
 Thesis: *Improvement of the aerodynamic shape optimization by adjoint methods in an MDO process.*
 
-# Skills
+## Skills
 
 ### Python
 
@@ -113,6 +116,44 @@ This includes publication-ready visualizations, interactive visualizations for e
 * 10+ years of experience
 Version control (git, Github), CI/CD, modern testing frameworks, proficiency with UNIX systems, AWS (Lambda), Jira, and Confluence.
 
-# Scientific Outreach
+## Scientific Outreach
+
 * Collaborator in the Computational and Mathematical Modeling Program (KIT University), developing programs that teach high-school and entry-level university students the importance of mathematical modeling for real-world applications.
 * Publications in the (mathematical) didactical sciences, aiming at bringing mathematical modeling to the German Abitur.
+
+
+## Publications
+
+0) **Mathematische Grundlagen der Künstlichen Intelligenz im Schulunterricht**
+   *Mathematische Semesterberichte 69 (1), 73-101*
+   Authors: Sarah Schönbrodt, **Thomas Camminady**, Martin Frank
+1) **Theory, models, and numerical methods for classical and non-classical transport**
+   *Dissertation*
+2) **Ray Effect Mitigation for the Discrete Ordinates Method Using Artificial Scattering**
+   *Nuclear Science and Engineering, Vol. 194, No. 11, pp. 971–988 (2020)*
+   Authors: Martin Frank, Jonas Kusch, **Thomas Camminady**, Cory D. Hauck
+3)  **Vorschlag für eine Abiturprüfungsaufgabe mit authentischem und relevantem Realitätsbezug**
+   *In: Modellierungskompetenzen – Diagnose und Bewertung, Springer Berlin Heidelberg, pp. 153–187 (2020)*
+   Authors: Sube, Maike; **Thomas Camminady**; Martin Frank; Roeckerath, Christina
+4)  **Ray effect mitigation for the discrete ordinates method through quadrature rotation**
+   *Journal of Computational Physics, Vol. 382, pp. 105–123 (2019)*
+   Authors: **Thomas Camminady**, Martin Frank, Kerstin Küpper, Jonas Kusch
+5)   **Highly uniform quadrature sets for the discrete ordinates method**
+   *In Proceedings of the International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering (2019), pp. 25–29*
+   Authors: **Thomas Camminady**, Martin Frank, Jonas Kusch
+6)   **A spectral Galerkin method for the fractional order diffusion and wave equation**
+   *International Journal of Advances in Engineering Sciences and Applied Mathematics, Vol. 10, No. 1, pp. 90–104 (2018)*
+   Authors: **Thomas Camminady**, Martin Frank
+7)   **A new high-order fluid solver for tokamak edge plasma transport simulations based on a magnetic-field independent discretization**
+   *Contributions to Plasma Physics, Vol. 58, Nos. 6–8, pp. 688–695 (2018)*
+   Authors: Giorgiani, G.; **Thomas Camminady**; Bufferand, H.; Ciraolo, G.; Ghendrih, P.; Guillard, H.; Heumann, H.; Nkonga, B.; Schwander, F.; Serre, E.; Tamain, P.
+8)    **Nonclassical particle transport in heterogeneous materials**
+   *In Proceedings of the International Conference on Mathematics & Computational Methods Applied to Nuclear Science & Engineering (2017)*
+   Authors: **Thomas Camminady**, Martin Frank, Edward W. Larsen
+9) **The equivalence of forward and backward nonclassical particle transport theories**
+   *In Proceedings of the International Conference on Mathematics & Computational Methods Applied to Nuclear Science & Engineering (2017)*
+   Authors: Edward W. Larsen, Martin Frank, **Thomas Camminady**
+10) **Theory and application of numerical methods for fractional diffusion equations**
+   *Master's Thesis (2015)*
+11) **Improvement of the aerodynamic shape optimization by adjoint methods in an MDO process**
+   *Bachelor's Thesis (2013)*
