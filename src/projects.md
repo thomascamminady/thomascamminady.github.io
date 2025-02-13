@@ -5,6 +5,7 @@ permalink: /projects/
 style: assets/style.css
 
 ---
+<script data-goatcounter="https://drtc.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 # Projects
 * [I like colors](https://camminady.dev/posts/colors)

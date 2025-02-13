@@ -3,6 +3,7 @@ title: Storytelling with my personal running data
 toc: false
 style: ../assets/style.css
 ---
+<script data-goatcounter="https://drtc.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 # Storytelling with my personal running data
 
@@ -23,30 +24,30 @@ const config = {
 };
 ```
 
-```js 
+```js
 aq.addFunction('getYear', timestamp => {
-  return new Date(timestamp * 1000).getUTCFullYear(); 
-}); 
+  return new Date(timestamp * 1000).getUTCFullYear();
+});
 
 aq.addFunction('getMonth', timestamp => {
-  return new Date(timestamp * 1000).getUTCMonth(); 
-}); 
+  return new Date(timestamp * 1000).getUTCMonth();
+});
 
 aq.addFunction('getDay', timestamp => {
-  return new Date(timestamp * 1000).getUTCDay(); 
-}); 
+  return new Date(timestamp * 1000).getUTCDay();
+});
 
 aq.addFunction('getDayOfMonth', timestamp => {
-  return new Date(timestamp * 1000).getUTCDate(); 
-}); 
+  return new Date(timestamp * 1000).getUTCDate();
+});
 
 aq.addFunction('getHour', timestamp => {
-  return new Date(timestamp * 1000).getUTCHours(); 
-}); 
+  return new Date(timestamp * 1000).getUTCHours();
+});
 
 aq.addFunction('getDate', timestamp => {
-  return new Date(timestamp * 1000); 
-}); 
+  return new Date(timestamp * 1000);
+});
 
 Date.prototype.getUTCWeekNumber = function () {
 
@@ -62,17 +63,17 @@ Date.prototype.getUTCWeekNumber = function () {
     // Calculate full weeks between the year start and the adjusted date
     return Math.ceil(((date - yearStart) / 86400000 + 1) / 7);
 
-}; 
+};
 
 aq.addFunction('getWeek', timestamp => {
-  return new Date(timestamp * 1000).getUTCWeekNumber(); 
-}); 
+  return new Date(timestamp * 1000).getUTCWeekNumber();
+});
 
 ```
 
 ## Calendar view
 
-```js 
+```js
 Plot.plot({
 
     width:800,
@@ -83,20 +84,20 @@ marks: [
 
         Plot.dot(
             (aqactivities
-            .derive({ 
-                year: d => aq.fn.getYear(d.time), 
+            .derive({
+                year: d => aq.fn.getYear(d.time),
                 month: d => aq.fn.getMonth(d.time),
                 day: d => (aq.fn.getDay(d.time)-1+7)%7,
                 hour: d => aq.fn.getHour(d.time),
                 dom : d=> aq.fn.getDayOfMonth(d.time),
                 week: d=> aq.fn.getWeek(d.time)
-                })    
-            .filter((d)=>d.sportid==168070) 
+                })
+            .filter((d)=>d.sportid==168070)
             .filter((d)=>d.distance < 45)
             .filter((d)=>d.year==2024)
             .groupby("day","week")
             .rollup({total:aq.op.sum("distance")})
-            ), 
+            ),
             {
                     x: "week",
                     y: "day",
@@ -110,21 +111,21 @@ marks: [
 
 ## Monthly aggregate
 
-```js 
+```js
 Plot.plot({
 marks: [
 
         Plot.barY(
             (aqactivities
-            .filter((d)=>d.sportid==168070) 
+            .filter((d)=>d.sportid==168070)
             .filter((d)=>d.distance < 45)
-            .derive({ year: d => aq.fn.getYear(d.time) })    
-            .derive({ month: d => aq.fn.getMonth(d.time)+1 })    
+            .derive({ year: d => aq.fn.getYear(d.time) })
+            .derive({ month: d => aq.fn.getMonth(d.time)+1 })
             .filter((d)=>d.year==2024)
             .select("month","distance")
             .groupby("month")
             .rollup({total:aq.op.sum("distance")})
-            .orderby("month")), 
+            .orderby("month")),
             {
                     x: "month",
                     y: "total"
@@ -341,23 +342,23 @@ Plot.plot({
 
 ## Distance distribution
 
-```js 
+```js
 Plot.plot({
-  width:700, 
-  fy: {padding: 0.3}, 
-  color: {legend: false, type:"ordinal", scheme:"Observable10"}, 
+  width:700,
+  fy: {padding: 0.3},
+  color: {legend: false, type:"ordinal", scheme:"Observable10"},
   marks: [
 
-    Plot.tickX(activities.filter((d)=>d.sportid==168070).filter((d)=>d.distance < 43).filter((d)=>d.s<4*3600).filter((d)=>d.s/60 / (d.distance)>2).filter((d)=>d.s/60 / (d.distance)<7).filter((d) =>  new Date(1000*d.time).getUTCFullYear()>=2014), 
+    Plot.tickX(activities.filter((d)=>d.sportid==168070).filter((d)=>d.distance < 43).filter((d)=>d.s<4*3600).filter((d)=>d.s/60 / (d.distance)>2).filter((d)=>d.s/60 / (d.distance)<7).filter((d) =>  new Date(1000*d.time).getUTCFullYear()>=2014),
         {
-        x:(d)=>d.s/60 / (d.distance),  
-             fy:(d) =>  new Date(1000*d.time).getUTCFullYear(), 
+        x:(d)=>d.s/60 / (d.distance),
+             fy:(d) =>  new Date(1000*d.time).getUTCFullYear(),
              opacity: "distance",
              strokeWidth:1
-             
+
     }),
 
- 
+
   ]
 })
 

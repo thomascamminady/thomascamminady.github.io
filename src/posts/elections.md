@@ -1,10 +1,12 @@
 
+
 ---
 title: Elections
 toc: false
 style: ../assets/style.css
-
 ---
+<script data-goatcounter="https://drtc.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 # Similarity between German parties for the EU elections 2024
 
 Based on their Wahl-O-Mat answers, crawled from www.wahl-o-mat.de (file: `module_definition.js`).
@@ -7397,5 +7399,3 @@ vl.render({
     }
 })
 ```
-
-
