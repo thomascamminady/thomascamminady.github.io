@@ -8,7 +8,7 @@ style: assets/style.css
 <script data-goatcounter="https://drtc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
 # Projects
-* [I like colors](https://camminady.dev/posts/colors)
+* [I like colors](https://camminady.dev/colors)
 * [EU election analysis](https://camminady.dev/posts/elections)
 * [Traffic analysis](https://staustau.de)
 * [Le Tour de France](https://github.com/thomascamminady/LeTourDataSet)
