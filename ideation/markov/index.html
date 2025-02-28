@@ -2,26 +2,38 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Interactive Markov Chain Visualizer</title>
+        <title></title>
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <h1>Interactive Markov Chain Visualizer</h1>
-        <p>Enter a transition matrix (in JSON format):</p>
-        <textarea id="matrix-input" rows="5" cols="50">
-[
+        <svg id="mySVG" width="90vw" height="90vh">
+            <g class="links"></g>
+            <g class="nodes"></g>
+        </svg>
+
+        <div id="controls">
+            <textarea
+                id="matrix-input"
+                rows="5"
+                placeholder="[
   [0.8, 0.2, 0.0],
   [0.5, 0.4, 0.1],
   [0.2, 0.2, 0.6]
-]
-    </textarea
-        >
-        <br />
-        <button id="update-button">Update Graph</button>
-        <div id="graph"></div>
+]"
+            >
+[
+  [0.5, 0.2, 0.0,0.3],
+  [0.5, 0.2, 0.1,0.2],
+  [0.2, 0.2, 0.3,0.3],
+  [0.2, 0.2, 0.3,0.3]
+]</textarea
+            >
+            <button id="simulate-button">Simulate</button>
+        </div>
 
         <!-- Include d3.js -->
         <script src="https://d3js.org/d3.v7.min.js"></script>
-        <script src="script.js"></script>
+        <!-- Load the entry module (animation.js) -->
+        <script type="module" src="animation.js"></script>
     </body>
 </html>
