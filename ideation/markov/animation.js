@@ -162,8 +162,35 @@ function updateGraph() {
             }
         }
         if (!selectedLink) selectedLink = outgoing[outgoing.length - 1];
+
+        // Find the corresponding path element.
         let pathEl = link.filter((d) => d === selectedLink).node();
         if (!pathEl) return;
+
+        // Temporarily update the selected link's stroke to full opacity.
+        // Save the original (alpha-blended) stroke color.
+        const originalStroke = pathEl.getAttribute("stroke");
+        // Use selectedLink.source.id to get the correct base color.
+        const baseColor = color(selectedLink.source.id);
+        pathEl.setAttribute("stroke", baseColor);
+
+        // Update the arrowhead marker for this link.
+        const markerEnd = pathEl.getAttribute("marker-end");
+        let originalMarkerStroke, originalMarkerFill;
+        if (markerEnd) {
+            const markerId = markerEnd.replace("url(#", "").replace(")", "");
+            const marker = document.getElementById(markerId);
+            if (marker) {
+                const markerPath = marker.querySelector("path");
+                originalMarkerStroke = markerPath.getAttribute("stroke");
+                originalMarkerFill = markerPath.getAttribute("fill");
+                // Set both stroke and fill to the fully opaque base color.
+                markerPath.setAttribute("stroke", baseColor);
+                markerPath.setAttribute("fill", baseColor);
+            }
+        }
+
+        // Animate the moving circle along the path.
         let pathLength = pathEl.getTotalLength();
         movingCircle.attr(
             "transform",
@@ -171,12 +198,26 @@ function updateGraph() {
         );
         movingCircle
             .transition()
-            .duration(400)
+            .duration(1000)
             .attrTween("transform", () => (t) => {
                 let point = pathEl.getPointAtLength(t * pathLength);
                 return `translate(${point.x},${point.y})`;
             })
             .on("end", () => {
+                // Restore the original stroke on the link.
+                pathEl.setAttribute("stroke", originalStroke);
+                // Restore the original stroke and fill on the arrowhead.
+                if (markerEnd) {
+                    const markerId = markerEnd
+                        .replace("url(#", "")
+                        .replace(")", "");
+                    const marker = document.getElementById(markerId);
+                    if (marker) {
+                        const markerPath = marker.querySelector("path");
+                        markerPath.setAttribute("stroke", originalMarkerStroke);
+                        markerPath.setAttribute("fill", originalMarkerFill);
+                    }
+                }
                 currentNode = selectedLink.target;
                 animateTransition();
             });
