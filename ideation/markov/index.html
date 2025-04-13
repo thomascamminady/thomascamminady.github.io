@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+            rel="stylesheet"
+        />
+
         <meta charset="UTF-8" />
-        <title></title>
+        <title>Graph Animation</title>
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
@@ -12,15 +17,17 @@
         </svg>
 
         <div id="controls">
-            <textarea id="matrix-input" rows="5">
+            <textarea id="matrix-input" rows="5" style="display: none">
 [
-    [0.7, 0.2, 0.0, 0.1],
-    [0.5, 0.2, 0.1, 0.2],
-    [0.2, 0.2, 0.3, 0.3],
-    [0.0, 0.3, 0.0, 0.7]
-]</textarea
+  [0.902, 0.073, 0.032, 0.000, 0.220, 0.273],
+  [0.000, 0.393, 0.000, 0.334, 0.272, 0.001],
+  [0.402, 0.000, 0.099, 0.000, 0.000, 0.499],
+  [0.000, 0.000, 0.470, 0.530, 0.000, 0.000],
+  [0.000, 0.263, 0.218, 0.305, 0.214, 0.000],
+  [0.000, 0.125, 0.167, 0.000, 0.342, 0.366]
+]
+      </textarea
             >
-            <button id="simulate-button">Simulate</button>
         </div>
 
         <!-- Include d3.js -->

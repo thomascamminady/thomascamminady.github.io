@@ -1,11 +1,15 @@
+/* Import Roboto from Google Fonts in your HTML head:
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+*/
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin: 30px;
+    /* Increased overall margin */
     background: white;
+    line-height: 1.6;
+    /* More breathing room for text */
 }
-
-
-
 
 .link {
     fill: none;
@@ -13,29 +17,54 @@ body {
 }
 
 textarea {
-    width: 300px;
+    width: 350px;
     height: 150px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     font-size: 16px;
-    padding: 8px;
+    padding: 16px;
+    /* More internal padding */
     color: #4b4b4b;
-    border: 3px solid #c4c4c4;
+    border: 3px solid #e0e0e0;
     border-radius: 6px;
     resize: none;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    /* Extra spacing below the textarea */
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 30px;
+    right: 10px;
 }
 
-button {
-    background-color: #c4c4c4;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 20px;
-    cursor: pointer;
-    position: fixed;
-    bottom: 25px;
-    right: 50px;
+/* Letter grid styling */
+.letter-grid {
+    pointer-events: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.8;
+    /* Added line height for improved spacing */
+}
+
+.letter-grid .letter-row {
+    margin-bottom: 10px;
+    /* Space between rows */
+}
+
+.letter-grid .letter-row .letter-item {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    margin-right: 8px;
+    /* Space between individual letters */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

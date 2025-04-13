@@ -1,16 +1,95 @@
-// animation.js
 import { color, buildGraph, drawGraph } from "./drawing.js";
 
-// Set up the click event for simulation.
-document
-    .getElementById("simulate-button")
-    .addEventListener("click", updateGraph);
+let currentSimulation = null; // Global reference for the simulation
+
+// ===== Letter Grid Configuration and Functions =====
+const maxColumns = 10; // Maximum letters per row.
+const rowHeight = 40; // Vertical spacing (pixels) per row.
+const maxRows = 15; // Maximum number of rows visible.
+
+// letterGrid is an array of rows; each row is an array of objects: { letter, color }.
+let letterGrid = [];
+
+function addLetter(letter, letterColor, svgEl) {
+    if (letterGrid.length === 0) {
+        letterGrid.push([]);
+    }
+    let lastRow = letterGrid[letterGrid.length - 1];
+    if (lastRow.length >= maxColumns) {
+        lastRow = [];
+        letterGrid.push(lastRow);
+    }
+    lastRow.push({ letter, color: letterColor });
+    if (letterGrid.length > maxRows) {
+        letterGrid = [];
+        svgEl.selectAll(".letter-grid").remove();
+    }
+    renderLetterGrid(svgEl);
+}
+
+function renderLetterGrid(svgEl) {
+    let letterGroup = svgEl.select(".letter-grid");
+    if (letterGroup.empty()) {
+        letterGroup = svgEl
+            .append("g")
+            .attr("class", "letter-grid")
+            .attr("transform", "translate(10, 30)");
+    }
+
+    let rowGroups = letterGroup
+        .selectAll("g.letter-row")
+        .data(letterGrid, (d, i) => i);
+
+    const rowGroupsEnter = rowGroups
+        .enter()
+        .append("g")
+        .attr("class", "letter-row")
+        .attr("transform", (d, i) => `translate(0, ${i * rowHeight})`);
+
+    rowGroups = rowGroupsEnter.merge(rowGroups);
+    rowGroups
+        .transition()
+        .duration(300)
+        .attr("transform", (d, i) => `translate(0, ${i * rowHeight})`);
+
+    rowGroups.exit().remove();
+
+    rowGroups.each(function (rowData, rowIndex) {
+        const rowSel = d3
+            .select(this)
+            .selectAll("text")
+            .data(rowData, (d, i) => i);
+
+        const lettersEnter = rowSel
+            .enter()
+            .append("text")
+            .attr("class", "letter-item")
+            .attr("x", maxColumns * 30)
+            .attr("y", 0)
+            .attr("fill", (d) => d.color)
+            .attr("font-weight", "bold")
+            .text((d) => d.letter);
+
+        rowSel
+            .merge(lettersEnter)
+            .transition()
+            .duration(300)
+            .attr("x", (d, i) => i * 30)
+            .attr("fill", (d) => d.color)
+            .text((d) => d.letter);
+
+        rowSel.exit().remove();
+    });
+}
 
 function updateGraph() {
     const svgSelector = "#mySVG";
     const svg = d3.select(svgSelector);
 
-    // Get and parse the matrix input.
+    // Remove any lingering SVG elements and transitions.
+    svg.selectAll("*").interrupt();
+    svg.selectAll("*").remove();
+
     let matrixText = document.getElementById("matrix-input").value;
     let matrix;
     try {
@@ -24,7 +103,6 @@ function updateGraph() {
         return;
     }
 
-    // Build the graph data structure.
     let graph;
     try {
         graph = buildGraph(matrix);
@@ -33,16 +111,14 @@ function updateGraph() {
         return;
     }
 
-    // Draw the static elements (nodes, links, markers).
     const { link, node, svg: svgEl } = drawGraph(graph, svgSelector);
 
-    // Get SVG dimensions.
     const bbox = svgEl.node().getBoundingClientRect();
     const width = bbox.width;
     const height = bbox.height;
 
-    // Create the force simulation.
-    const simulation = d3
+    // Create a new simulation.
+    currentSimulation = d3
         .forceSimulation(graph.nodes)
         .force(
             "link",
@@ -54,7 +130,6 @@ function updateGraph() {
         .force("charge", d3.forceManyBody().strength(-500))
         .force("center", d3.forceCenter(width / 2, height / 2));
 
-    // Add drag interactivity to nodes.
     node.call(
         d3
             .drag()
@@ -64,7 +139,7 @@ function updateGraph() {
     );
 
     function dragstarted(event, d) {
-        if (!event.active) simulation.alphaTarget(0.3).restart();
+        if (!event.active) currentSimulation.alphaTarget(0.3).restart();
         d.fx = d.x;
         d.fy = d.y;
     }
@@ -73,14 +148,12 @@ function updateGraph() {
         d.fy = event.y;
     }
     function dragended(event, d) {
-        if (!event.active) simulation.alphaTarget(0);
+        if (!event.active) currentSimulation.alphaTarget(0);
         d.fx = null;
         d.fy = null;
     }
 
-    // Update positions on each tick.
-    simulation.on("tick", () => {
-        // Compute the center of all nodes.
+    currentSimulation.on("tick", () => {
         let centerx = 0,
             centery = 0;
         graph.nodes.forEach((n) => {
@@ -90,14 +163,12 @@ function updateGraph() {
         centerx /= graph.nodes.length;
         centery /= graph.nodes.length;
 
-        // Update link paths.
         link.attr("d", (d) => {
             if (d.source.id === d.target.id) {
-                // Self-loop using a cubic Bézier curve.
                 const S = { x: d.source.x, y: d.source.y };
                 const factor = 150;
-                let normalx = S.x - centerx;
-                let normaly = S.y - centery;
+                let normalx = S.x - centerx,
+                    normaly = S.y - centery;
                 const norm = Math.sqrt(normalx * normalx + normaly * normaly);
                 normalx /= norm;
                 normaly /= norm;
@@ -120,7 +191,6 @@ function updateGraph() {
                 };
                 return `M${d.source.x},${d.source.y} C${P1.x},${P1.y} ${P2.x},${P2.y} ${d.target.x},${d.target.y}`;
             } else {
-                // For non-self loops, draw an arc.
                 const dx = d.target.x - d.source.x,
                     dy = d.target.y - d.source.y,
                     dr = Math.sqrt(dx * dx + dy * dy);
@@ -128,20 +198,24 @@ function updateGraph() {
             }
         });
 
-        // Update node positions.
         node.attr("transform", (d) => `translate(${d.x},${d.y})`);
     });
 
-    // Create the moving circle (agent) with black, 50% opacity.
+    // Remove any previous movingCircle transitions.
+    svgEl.selectAll("circle.moving").interrupt();
+
     const movingCircle = svgEl
         .append("circle")
+        .attr("class", "moving")
         .attr("r", 8)
         .attr("fill", "rgba(0,0,0,0.5)");
 
     let currentNode = graph.nodes[0];
 
-    // Animate the moving agent along outgoing links.
     function animateTransition() {
+        // If the SVG element is removed, stop.
+        if (!svgEl.node()) return;
+
         let outgoing = graph.links.filter(
             (l) => l.source.id === currentNode.id
         );
@@ -163,18 +237,15 @@ function updateGraph() {
         }
         if (!selectedLink) selectedLink = outgoing[outgoing.length - 1];
 
-        // Find the corresponding path element.
         let pathEl = link.filter((d) => d === selectedLink).node();
         if (!pathEl) return;
 
-        // Temporarily update the selected link's stroke to full opacity.
-        // Save the original (alpha-blended) stroke color.
+        d3.select(pathEl).raise();
+
         const originalStroke = pathEl.getAttribute("stroke");
-        // Use selectedLink.source.id to get the correct base color.
         const baseColor = color(selectedLink.source.id);
         pathEl.setAttribute("stroke", baseColor);
 
-        // Update the arrowhead marker for this link.
         const markerEnd = pathEl.getAttribute("marker-end");
         let originalMarkerStroke, originalMarkerFill;
         if (markerEnd) {
@@ -184,29 +255,30 @@ function updateGraph() {
                 const markerPath = marker.querySelector("path");
                 originalMarkerStroke = markerPath.getAttribute("stroke");
                 originalMarkerFill = markerPath.getAttribute("fill");
-                // Set both stroke and fill to the fully opaque base color.
                 markerPath.setAttribute("stroke", baseColor);
                 markerPath.setAttribute("fill", baseColor);
             }
         }
 
-        // Animate the moving circle along the path.
         let pathLength = pathEl.getTotalLength();
         movingCircle.attr(
             "transform",
             `translate(${currentNode.x},${currentNode.y})`
         );
+
+        // Interrupt any previous transition on the moving circle.
+        movingCircle.interrupt();
+
         movingCircle
             .transition()
-            .duration(1000)
+            .duration(500)
             .attrTween("transform", () => (t) => {
                 let point = pathEl.getPointAtLength(t * pathLength);
                 return `translate(${point.x},${point.y})`;
             })
             .on("end", () => {
-                // Restore the original stroke on the link.
+                // Restore original stroke and marker attributes.
                 pathEl.setAttribute("stroke", originalStroke);
-                // Restore the original stroke and fill on the arrowhead.
                 if (markerEnd) {
                     const markerId = markerEnd
                         .replace("url(#", "")
@@ -218,22 +290,27 @@ function updateGraph() {
                         markerPath.setAttribute("fill", originalMarkerFill);
                     }
                 }
+                // Update the current node and add the corresponding letter.
                 currentNode = selectedLink.target;
+                addLetter(
+                    String.fromCharCode(65 + currentNode.id),
+                    color(currentNode.id),
+                    svgEl
+                );
                 animateTransition();
             });
     }
     animateTransition();
 
-    // Update the simulation's center on window resize.
+    // Restart simulation on window resize.
     window.addEventListener("resize", () => {
         const newBbox = svgEl.node().getBoundingClientRect();
-        simulation.force(
+        currentSimulation.force(
             "center",
             d3.forceCenter(newBbox.width / 2, newBbox.height / 2)
         );
-        simulation.alpha(0.3).restart();
+        currentSimulation.alpha(0.3).restart();
     });
 }
 
-// Initialize the graph when the script loads.
 updateGraph();

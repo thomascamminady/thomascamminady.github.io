@@ -9,160 +9,164 @@ toc: false
 
 <script data-goatcounter="https://drtc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
-# Curriculum Vitae
+# Dr. Thomas Camminady's CV
 
-Dr. rer. nat. Thomas Camminady
+-   Phone: +49 178 9619953
+-   Email: [job@camminady.dev](mailto:job@camminady.dev)
+-   Location: Bonn, Germany
+-   LinkedIn: [camminady](https://linkedin.com/in/camminady)
+-   GitHub: [thomascamminady](https://github.com/thomascamminady)
 
-[thomas@camminady.dev](mailto:thomas@camminady.dev) ·
-[camminady.dev](https://camminady.dev) ·
-[github.com/thomascamminady](https://github.com/thomascamminady)
+# Professional Summary
 
-## Experience
+Accomplished algorithm developer and applied mathematician with a Ph.D. in Applied Mathematics, specializing in sensor fusion, data analysis, visualization, and machine learning. Proven track record in designing and deploying scalable machine learning solutions that drive user engagement and operational efficiency. Adept at translating complex research into production-ready code, excelling in collaborative, cross-functional environments.
 
-### Algorithm Developer
+# Education
 
-**[Wahoo Fitness LLC](https://wahoofitness.com)**
+## Karlsruhe Institute of Technology, Dr. rer. nat. in Applied Mathematics
 
-_Since 03/2021, Remote from Germany_
+-   Oct 2017 – Jan 2021
+-   Karlsruhe, Germany
+-   Thesis: Theory, models, and numerical methods for classical and non-classical transport.
 
--   Shipped an ML-driven training recommendation engine for athletes.
--   Backend API development with Python and Pydantic, serving thousands of users, deployed via AWS.
--   Collaboration with cloud engineers and frontend developers to ensure seamless integration and functionality.
--   Using time series analysis, sensor fusion, uncertainty quantification, and machine learning; both for rapid prototyping and production-ready code.
--   Analysis and visualization of distributed (user) data using pandas, numpy, plotly, and SQL.
--   C-code generation for low-level hardware sensors (GNSS, barometer, gyroscope) using Matlab.
--   Agile work environment in a fully remote team (US and EU) using Jira and Confluence.
+## RWTH Aachen University, M.Sc. in Computational Engineering Science (CES)
 
-### Scientific Staff
+-   Oct 2013 – Mar 2015
+-   Aachen, Germany
+-   Selected Courses: Parallel Computing, Computational Differentiation, Uncertainty Quantification, Combinatorial Problems in Scientific Computing.
+-   Thesis: Theory and application of numerical methods for fractional diffusion equations.
 
-**[Steinbuch Centre for Computing](https://www.scc.kit.edu/en/aboutus/rg-csmm.php)** and
-**[Center for CES](https://www.mathcces.rwth-aachen.de)**
+## RWTH Aachen University, B.Sc. in CES
 
-_04/2015 - 03/2021, Karlsruhe and Aachen, Germany_
+-   Oct 2009 – Sept 2013
+-   Aachen, Germany
+-   Selected Courses: Computational Fluid Dynamics, Aerodynamics, Calculus of Variations, Partial Differential Equations.
+-   Thesis: Improvement of the aerodynamic shape optimization by adjoint methods in an MDO process.
 
--   Research in the field of kinetic theory, numerical mathematics, optimization, and machine learning.
--   Application of reinforcement learning to the optimization of numerical algorithms in CFD.
--   Optimization of research software on KIT's HPC cluster via parameter studies using OpenMP.
--   Teaching assistant and substitute lecturer for modules in the mathematics and CES programs.
+# Experience
 
-### Student Assistant
+## Wahoo Fitness LLC, Data Scientist & Algorithm Developer
 
-**[Center for CES](https://www.mathcces.rwth-aachen.de)**
+-   Mar 2021 – present
+-   Remote from Germany
+-   Launched a **machine learning–driven training recommendation engine** for athletes, enhancing personalized workout strategies.
+-   Developed robust backend APIs using Python and Pydantic, serving thousands of users via AWS.
+-   Collaborated with cloud engineers and frontend developers to integrate machine learning models into production systems.
+-   Applied **time series analysis, sensor fusion, uncertainty quantification, and machine learning** for rapid prototyping and scalable solutions.
+-   Analyzed and visualized large-scale, distributed user data using pandas, NumPy, Plotly, and SQL.
+-   Automated C-code generation for low-level hardware sensors (GNSS, barometer, gyroscope) using Matlab.
+-   Operated within an agile, fully remote team (US and EU) using Jira and Confluence.
 
-_01/2010 - 03/2015, Aachen, Germany_
+## Center for CES & Steinbuch Centre for Computing, Scientific Staff
 
--   Helping with teaching duties for a variety of mathematics and computer science modules.
--   Developed GPU-based Monte Carlo simulations using CUDA.
+-   Apr 2015 – Mar 2021
+-   Aachen & Karlsruhe
+-   Conducted research in the field of kinetic theory, numerical mathematics, optimization, and machine learning.
+-   **Pioneered reinforcement learning methods** to optimize numerical algorithms in CFD, resulting in significant computational improvements.
+-   Optimized research software on KIT's HPC cluster via parameter studies using OpenMP.
+-   Served as teaching assistant and substitute lecturer for modules in the mathematics and CES programs.
 
-### Summer School on Plasmas
+## Festival de Théorie, Summer School on Plasmas
 
-**[Festival de Théorie](http://festival-theorie.org)**
+-   June 2017 – July 2017
+-   Aix-en-Provence, France
+-   Implemented magnetic field derivatives into a Fortran DG-MHD research code.
+-   Actively participated in seminars and workshops in the field of plasmas.
 
-_06/2017 - 07/2017, Aix-en-Provence, France_
+## Center for CES, Student Research Assistant
 
--   Implementing magnetic field derivatives into a Fortran DG-MHD research code.
--   Active participation in seminars and workshops in the field of plasmas.
+-   Jan 2010 – Mar 2015
+-   Aachen, Germany
+-   Assisted with teaching duties for a variety of mathematics and computer science modules.
+-   Developed **GPU-based Monte Carlo simulations** using CUDA.
 
-### Internship with Bachelor's Thesis
+## EADS Cassidian, Internship with Bachelor's Thesis
 
-**[EADS Cassidian](https://www.cyber.airbus.com)**
+-   Oct 2012 – Apr 2013
+-   Manching, Germany
+-   Performed numerical simulations with in-house tools and the adjoint code of the German Aerospace Center (DLR).
+-   Automated **UAV airfoil shape optimization** using mesh adjoints.
 
-_10/2012 - 04/2013, Manching, Germany_
+# Projects
 
--   Numerical simulations with in-house tools and the adjoint code of the German Aerospace Center (DLR).
--   Automation of UAV airfoil shape optimization using mesh adjoints.
+## [LeTourDataSet](https://github.com/thomascamminady/LeTourDataSet)
 
-## Education
+## [alltime athletics python](https://github.com/thomascamminady/alltime_athletics_python)
 
-### Dr. rer. nat. in Applied Mathematics
+## [traffic-balve](https://github.com/thomascamminady/traffic-balve)
 
-**[Karlsruhe Institute of Technology](https://www.kit.edu)**
+## [dicopal](https://camminady.dev/dicopal/)
 
-_10/2017 - 01/2021, Karlsruhe, Germany_
+# Scientific Outreach
 
-Thesis: _Theory, models, and numerical methods for classical and non-classical transport._
+Collaborator in the **Computational and Mathematical Modeling Program** (KIT University). Developed educational programs that demonstrate the importance of mathematical modeling and machine learning for real-world applications to high-school and entry-level university students.
+Authored publications in mathematical didactics aimed at integrating mathematical modeling into the German Abitur curriculum.
 
-### Master of Science in Computational Engineering Science
+# Skills
 
-**[RWTH Aachen University](https://www.rwth-aachen.de)**
+-   Python: 8 years of experience: Expert in object-oriented and type-annotated Python, employing advanced design paradigms for robust development and testing. Experience with NumPy, SciPy, pandas, matplotlib, and scikit-learn.
+-   MATLAB: 6 years of experience: Development of scientific simulation tools and visualizations. Includes working with MuPAD, Simulink, and Optimization Toolbox.
+-   Data Visualization: 10+ years of experience: Expert in creating interactive data visualizations and dashboards using Altair, Plotly, Matplotlib, D3.js, and Observable Plot to present complex data in an accessible way. This includes publication-ready visualizations, interactive visualizations for explorative analysis, and development of deployable dashboards.
+-   Software Development: 10+ years of experience: Version control (Git, Github), CI/CD, modern testing frameworks, proficiency with UNIX systems, AWS (Lambda), Jira, and Confluence.
 
-_10/2013 - 03/2015, Aachen, Germany_
+# Publications
 
-Selected Courses: Parallel Computing, Computational Differentiation, Uncertainty Quantification, Combinatorial Problems in Scientific Computing.
+## Mathematische Grundlagen der Künstlichen Intelligenz im Schulunterricht
 
-Thesis: _Theory and application of numerical methods for fractional diffusion equations._
+-   Sarah Schönbrodt, _Thomas Camminady_, Martin Frank
+-   Mathematische Semesterberichte 69 (1), 73-101, (2022)
 
-### Bachelor of Science in Computational Engineering Science
+## Theory, models, and numerical methods for classical and non-classical transport
 
-**[RWTH Aachen University](https://www.rwth-aachen.de)**
+-   _Thomas Camminady_
+-   Dissertation (2021)
 
-_10/2009 - 09/2013, Aachen, Germany_
+## Ray Effect Mitigation for the Discrete Ordinates Method Using Artificial Scattering
 
-Selected Courses: Computational Fluid Dynamics, Aerodynamics, Calculus of Variations, Partial Differential Equations.
+-   Martin Frank, Jonas Kusch, _Thomas Camminady_, Cory D. Hauck
+-   Nuclear Science and Engineering, Vol. 194, No. 11, pp. 971–988 (2020)
 
-Thesis: _Improvement of the aerodynamic shape optimization by adjoint methods in an MDO process._
+## Vorschlag für eine Abiturprüfungsaufgabe mit authentischem und relevantem Realitätsbezug
 
-## Skills
+-   Sube, Maike, _Thomas Camminady_, Martin Frank, Roeckerath, Christina
+-   Modellierungskompetenzen – Diagnose und Bewertung, Springer Berlin Heidelberg, pp. 153–187 (2020)
 
-### Python
+## Ray effect mitigation for the discrete ordinates method through quadrature rotation
 
--   8 years of experience:
-    Expertise in OOP, typed Python, and advanced software design paradigms for robust software development and testing.
-    Experience with NumPy, Scipy, pandas, matplotlib, and scikit.
+-   _Thomas Camminady_, Martin Frank, Kerstin Küpper, Jonas Kusch
+-   Journal of Computational Physics, Vol. 382, pp. 105–123 (2019)
 
-### Matlab
+## Highly uniform quadrature sets for the discrete ordinates method
 
--   6 years of experience:
-    Development of scientific simulation tools and visualizations. Includes working with MuPAD, Simulink, and Optimization Toolbox.
+-   _Thomas Camminady_, Martin Frank, Jonas Kusch
+-   Proceedings of the International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering, pp. 25–29, (2019)
 
-### Data Visualization
+## A spectral Galerkin method for the fractional order diffusion and wave equation
 
--   10+ years of experience:
-    Expert in creating interactive data visualizations and dashboards using Altair, Plotly, Matplotlib, D3.js, and Observable Plot to present complex data in an accessible way.
-    This includes publication-ready visualizations, interactive visualizations for explorative analysis, and development of deployable dashboards.
+-   _Thomas Camminady_, Martin Frank
+-   International Journal of Advances in Engineering Sciences and Applied Mathematics, Vol. 10, No. 1, pp. 90–104 (2018)
 
-### Software Development
+## A new high-order fluid solver for tokamak edge plasma transport simulations based on a magnetic-field independent discretization
 
--   10+ years of experience:
-    Version control (git, Github), CI/CD, modern testing frameworks, proficiency with UNIX systems, AWS (Lambda), Jira, and Confluence.
+-   Giorgiani, G., _Thomas Camminady_, Bufferand, H., Ciraolo, G., Ghendrih, P., Guillard, H., Heumann, H., Nkonga, B., Schwander, F., Serre, E., Tamain, P.
+-   Contributions to Plasma Physics, Vol. 58, Nos. 6–8, pp. 688–695 (2018)
 
-## Scientific Outreach
+## Nonclassical particle transport in heterogeneous materials
 
--   Collaborator in the Computational and Mathematical Modeling Program (KIT University), developing programs that teach high-school and entry-level university students the importance of mathematical modeling for real-world applications.
--   Publications in the (mathematical) didactical sciences, aiming at bringing mathematical modeling to the German Abitur.
+-   _Thomas Camminady_, Martin Frank, Edward W. Larsen
+-   Proceedings of the International Conference on Mathematics & Computational Methods Applied to Nuclear Science & Engineering (2017)
 
-## Publications
+## The equivalence of forward and backward nonclassical particle transport theories
 
-0. **Mathematische Grundlagen der Künstlichen Intelligenz im Schulunterricht**
-   _Mathematische Semesterberichte 69 (1), 73-101_
-   Authors: Sarah Schönbrodt, **Thomas Camminady**, Martin Frank
-1. **Theory, models, and numerical methods for classical and non-classical transport**
-   _Dissertation_
-2. **Ray Effect Mitigation for the Discrete Ordinates Method Using Artificial Scattering**
-   _Nuclear Science and Engineering, Vol. 194, No. 11, pp. 971–988 (2020)_
-   Authors: Martin Frank, Jonas Kusch, **Thomas Camminady**, Cory D. Hauck
-3. **Vorschlag für eine Abiturprüfungsaufgabe mit authentischem und relevantem Realitätsbezug**
-   _In: Modellierungskompetenzen – Diagnose und Bewertung, Springer Berlin Heidelberg, pp. 153–187 (2020)_
-   Authors: Sube, Maike; **Thomas Camminady**; Martin Frank; Roeckerath, Christina
-4. **Ray effect mitigation for the discrete ordinates method through quadrature rotation**
-   _Journal of Computational Physics, Vol. 382, pp. 105–123 (2019)_
-   Authors: **Thomas Camminady**, Martin Frank, Kerstin Küpper, Jonas Kusch
-5. **Highly uniform quadrature sets for the discrete ordinates method**
-   _In Proceedings of the International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering (2019), pp. 25–29_
-   Authors: **Thomas Camminady**, Martin Frank, Jonas Kusch
-6. **A spectral Galerkin method for the fractional order diffusion and wave equation**
-   _International Journal of Advances in Engineering Sciences and Applied Mathematics, Vol. 10, No. 1, pp. 90–104 (2018)_
-   Authors: **Thomas Camminady**, Martin Frank
-7. **A new high-order fluid solver for tokamak edge plasma transport simulations based on a magnetic-field independent discretization**
-   _Contributions to Plasma Physics, Vol. 58, Nos. 6–8, pp. 688–695 (2018)_
-   Authors: Giorgiani, G.; **Thomas Camminady**; Bufferand, H.; Ciraolo, G.; Ghendrih, P.; Guillard, H.; Heumann, H.; Nkonga, B.; Schwander, F.; Serre, E.; Tamain, P.
-8. **Nonclassical particle transport in heterogeneous materials**
-   _In Proceedings of the International Conference on Mathematics & Computational Methods Applied to Nuclear Science & Engineering (2017)_
-   Authors: **Thomas Camminady**, Martin Frank, Edward W. Larsen
-9. **The equivalence of forward and backward nonclassical particle transport theories**
-   _In Proceedings of the International Conference on Mathematics & Computational Methods Applied to Nuclear Science & Engineering (2017)_
-   Authors: Edward W. Larsen, Martin Frank, **Thomas Camminady**
-10. **Theory and application of numerical methods for fractional diffusion equations**
-    _Master's Thesis (2015)_
-11. **Improvement of the aerodynamic shape optimization by adjoint methods in an MDO process**
-    _Bachelor's Thesis (2013)_
+-   Edward W. Larsen, Martin Frank, _Thomas Camminady_
+-   Proceedings of the International Conference on Mathematics & Computational Methods Applied to Nuclear Science & Engineering (2017)
+
+## Theory and application of numerical methods for fractional diffusion equations
+
+-   _Thomas Camminady_
+-   Master's Thesis (2015)
+
+## Improvement of the aerodynamic shape optimization by adjoint methods in an MDO process
+
+-   _Thomas Camminady_
+-   Bachelor's Thesis (2013)
