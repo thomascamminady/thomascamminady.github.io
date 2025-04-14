@@ -2,7 +2,6 @@
 layout: page
 title: CV
 permalink: /cv/
-style: assets/style.css
 sidebar: false
 toc: false
 ---
@@ -11,7 +10,6 @@ toc: false
 
 # Dr. Thomas Camminady's CV
 
--   Phone: +49 178 9619953
 -   Email: [job@camminady.dev](mailto:job@camminady.dev)
 -   Location: Bonn, Germany
 -   LinkedIn: [camminady](https://linkedin.com/in/camminady)
@@ -89,13 +87,13 @@ Accomplished algorithm developer and applied mathematician with a Ph.D. in Appli
 
 # Projects
 
-## [LeTourDataSet](https://github.com/thomascamminady/LeTourDataSet)
+-   [LeTourDataSet](https://github.com/thomascamminady/LeTourDataSet)
 
-## [alltime athletics python](https://github.com/thomascamminady/alltime_athletics_python)
+-   [alltime athletics python](https://github.com/thomascamminady/alltime_athletics_python)
 
-## [traffic-balve](https://github.com/thomascamminady/traffic-balve)
+-   [traffic-balve](https://github.com/thomascamminady/traffic-balve)
 
-## [dicopal](https://camminady.dev/dicopal/)
+-   [dicopal](https://camminady.dev/dicopal/)
 
 # Scientific Outreach
 
