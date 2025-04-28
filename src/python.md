@@ -54,7 +54,6 @@ if __name__ == "__main__":
 Make type hints work when toggling a flag that changes the return type.
 
 ```python
-from calendar import c
 from typing import Literal, overload
 
 
