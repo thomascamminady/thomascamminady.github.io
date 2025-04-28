@@ -48,3 +48,36 @@ if __name__ == "__main__":
     fire.Fire(main)
 
 ```
+
+## `overload` functionality
+
+Make type hints work when toggling a flag that changes the return type.
+
+```python
+from calendar import c
+from typing import Literal, overload
+
+
+@overload
+def fit_poly(order: Literal[2]) -> tuple[float, float]: ...
+
+
+@overload
+def fit_poly(order: Literal[3]) -> tuple[float, float, float]: ...
+
+
+def fit_poly(
+    order: Literal[2, 3],
+) -> tuple[float, float] | tuple[float, float, float]:
+    if order == 2:
+        return (1.0, 2.0)
+    elif order == 3:
+        return (1.0, 2.0, 3.0)
+    else:
+        raise ValueError("order must be 2 or 3")
+
+
+if __name__ == "__main__":
+    a, b = fit_poly(2)
+    a, b, c = fit_poly(2)  # This lets you know that there is an error
+```
