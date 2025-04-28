@@ -65,9 +65,7 @@ def fit_poly(order: Literal[2]) -> tuple[float, float]: ...
 def fit_poly(order: Literal[3]) -> tuple[float, float, float]: ...
 
 
-def fit_poly(
-    order: Literal[2, 3],
-) -> tuple[float, float] | tuple[float, float, float]:
+def fit_poly(order: Literal[2, 3]) -> tuple[float, float] | tuple[float, float, float]:
     if order == 2:
         return (1.0, 2.0)
     elif order == 3:
