@@ -133,3 +133,35 @@ def update(val):
 alpha_slider.on_changed(update)
 
 ```
+
+## A container for constants
+
+```python
+from dataclasses import dataclass
+from enum import StrEnum, auto
+
+
+class DISTANCE(StrEnum):
+    KILOMETERS = auto()
+    MILES = auto()
+
+
+class WEIGHT(StrEnum):
+    KILOGRAMS = auto()
+    POUNDS = auto()
+
+
+@dataclass(frozen=True)
+class CONSTANTS:
+    DISTANCE = DISTANCE
+    WEIGHT = WEIGHT
+
+
+def dummy(x: CONSTANTS.DISTANCE) -> CONSTANTS.WEIGHT:
+    if x == CONSTANTS.DISTANCE.KILOMETERS:
+        return CONSTANTS.WEIGHT.KILOGRAMS
+    elif x == CONSTANTS.DISTANCE.MILES:
+        return CONSTANTS.WEIGHT.POUNDS
+    else:
+        raise ValueError("Invalid distance type")
+```
