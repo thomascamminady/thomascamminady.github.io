@@ -44,7 +44,6 @@ html {
     padding: 0 30px;
     text-align: left;
     letter-spacing: 0.01em;
-    min-height: 100vh;
 }
 
 /* Typography enhancements */
@@ -71,13 +70,14 @@ p {
 
 a {
     color: var(--text-accent);
-    text-decoration: none;
+    text-decoration: none !important;
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
 }
 
 a:hover {
-    border-bottom-color: var(--text-accent);
+    text-decoration: none !important;
+    border-bottom: 2px solid var(--text-accent);
     text-shadow: 0 0 4px rgba(0, 102, 204, 0.3);
 }
 
