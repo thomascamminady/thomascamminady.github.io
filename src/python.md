@@ -165,3 +165,46 @@ def dummy(x: CONSTANTS.DISTANCE) -> CONSTANTS.WEIGHT:
     else:
         raise ValueError("Invalid distance type")
 ```
+
+## Boilerplate minimization code
+
+```python
+from typing import Callable
+
+import numpy as np
+import pandas as pd
+import polars as pl
+from scipy.optimize import minimize
+
+
+def ansatz(
+    params: np.ndarray,
+    df: pl.DataFrame,
+    model_column: str,
+) -> pl.DataFrame:
+    """Define the model."""
+    return df.with_columns((params[0] * pl.col("test")).alias(model_column))
+
+
+def loss(
+    params: np.ndarray,
+    data: pl.DataFrame,
+    model_column: str,
+    reference_column: str,
+    metric: Callable[[np.ndarray, np.ndarray], float],
+) -> float:
+    """Eval model and compute loss."""
+    model = ansatz(params, data, model_column)
+    error = metric(model[model_column], data[reference_column])
+    return error
+
+
+def metric(x, y):
+    """Compute L2 norm between two arrays."""
+    return np.linalg.norm(x - y)
+
+
+data = pl.DataFrame({"test": [1.0, 2, 3], "reference": [2.0, 3, 4]})
+x0 = np.array([1.0, 1.0])
+res = minimize(loss, x0, args=(data, "model", "reference", metric))
+```
