@@ -199,7 +199,7 @@ def loss(
     return error
 
 
-def metric(x, y):
+def metric(x: np.ndarray, y: np.ndarray) -> float:
     """Compute L2 norm between two arrays."""
     return np.linalg.norm(x - y)
 
