@@ -9,6 +9,7 @@ style: assets/style.css
 
 # Projects
 
+-   [racetrack](http://camminady.dev/racetrack/)
 -   [.fit viewer](https://camminady.dev/fit-analyst/)
 -   [.parquet viewer](https://camminady.dev/parkett/)
 -   [I like colors](https://camminady.dev/colors)
