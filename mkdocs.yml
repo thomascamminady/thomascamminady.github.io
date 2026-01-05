@@ -1,4 +1,5 @@
 site_name: Website of Thomas Camminady
+site_url: https://camminady.dev
 theme:
   name: material
 
