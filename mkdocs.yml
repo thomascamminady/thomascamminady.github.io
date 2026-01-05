@@ -1,0 +1,21 @@
+site_name: Website of Thomas Camminady
+theme:
+  name: material
+
+extra_css:
+  - stylesheets/extra.css
+
+# theme: readthedocs
+markdown_extensions:
+  - fenced_code
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - toc:
+      toc_depth: 0
+
+nav:
+  - Home: index.md
+  - CV: cv.md
+  - Projects: projects.md
+  - Python: python.md
