@@ -2,8 +2,8 @@
 title: Logitech
 toc: false
 style: ../assets/style.css
-
 ---
+
 <script data-goatcounter="https://drtc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
 # Logitech MX Mechanical Mini for Mac: Issues with M1 Mac
@@ -23,17 +23,20 @@ I did not notice this issue on the Intel-based Macbook which makes me wonder whe
 ## What have I tried?
 
 I tried the usual things:
-* Making sure that the battery is charged.
-* Updating driver (Logi Options+)
-* Disconnect the device, forget the device in bluetooth settings, and reconnect.
-* Factory reset the keyboard, including the removal of all previously paired devices.
-* Pairing my Mac on each of the 3 different Easy-Switch slots to see whether the slot makes a difference.
+
+- Making sure that the battery is charged.
+- Updating driver (Logi Options+)
+- Disconnect the device, forget the device in bluetooth settings, and reconnect.
+- Factory reset the keyboard, including the removal of all previously paired devices.
+- Pairing my Mac on each of the 3 different Easy-Switch slots to see whether the slot makes a difference.
 
 ## References / Ressources
 
 I looked for this issue and found some recent posts / threads on reddit:
-* [MX mechanical sleeps](tab:https://www.reddit.com/r/logitech/comments/x7g2tb/mx_mechanical_sleeps/)
-* [MX keys randomly disconnecting](tab:https://www.reddit.com/r/logitech/comments/pz3hf6/mx_keys_randomly_disconnecting/)
+
+- [MX mechanical sleeps](tab:https://www.reddit.com/r/logitech/comments/x7g2tb/mx_mechanical_sleeps/)
+- [MX keys randomly disconnecting](tab:https://www.reddit.com/r/logitech/comments/pz3hf6/mx_keys_randomly_disconnecting/)
 
 This website explains how to factory reset your keyboard such that all previously paired devices are forgotten:
-* [Factory reset Logitech MX Keys Keyboard](tab:https://ernestojeh.com/factory-reset-mx-keys) (Note: The sequence is `esc O esc O esc B`, where `O` is the fifteenth letter of the alphabet, not the number `0`.)
+
+- [Factory reset Logitech MX Keys Keyboard](tab:https://ernestojeh.com/factory-reset-mx-keys) (Note: The sequence is `esc O esc O esc B`, where `O` is the fifteenth letter of the alphabet, not the number `0`.)

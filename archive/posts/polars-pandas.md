@@ -1,8 +1,8 @@
 ---
 toc: false
 style: ../assets/style.css
-
 ---
+
 <script data-goatcounter="https://drtc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
 # Polars vs. Pandas
@@ -23,23 +23,24 @@ The data I am using here is stored in a `parquet` file and the resulting data fr
 
 In a simplified way, that data looks like the following frame. There are two keys which contain measurements (thing of the first key of measurements with recording device A and B, and the second key of different days of the recordings.) Each measurement is a time series with columns `t` and `time` representing the local and global time, respectively. At those points in time, signals `y1` , `y2` , `y3` , ... are recorded.
 
-|    | key1   | key2   |   t |       y1 |        y2 |       y3 | time                   |
-|---:|:-------|:-------|----:|---------:|----------:|---------:|:-----------------------|
-|  0 | A      | U      |   0 | 0.342872 | 0.731905  | 0.341766 | 02/02/2023 15:07:21.68 |
-|  1 | A      | V      |   1 | 0.25941  | 0.493496  | 0.434559 | 02/02/2023 15:07:21.88 |
-|  2 | A      | W      |   2 | 0.485956 | 0.550383  | 0.521913 | 02/02/2023 15:07:22.28 |
-|  3 | A      | X      |   3 | 0.210544 | 0.406669  | 0.540021 | 02/02/2023 15:07:22.58 |
-|  4 | B      | U      |   2 | 0.830654 | 0.0386757 | 0.635353 | 02/02/2023 15:07:22.88 |
-|  5 | B      | V      |   3 | 0.187675 | 0.919848  | 0.648574 | 02/02/2023 15:07:23.28 |
-|  6 | B      | W      |   4 | 0.506172 | 0.93743   | 0.554965 | 02/02/2023 15:07:23.58 |
-|  7 | B      | X      |   5 | 0.21009  | 0.829689  | 0.857681 | 02/02/2023 15:07:23.88 |
+|     | key1 | key2 |   t |       y1 |        y2 |       y3 | time                   |
+| --: | :--- | :--- | --: | -------: | --------: | -------: | :--------------------- |
+|   0 | A    | U    |   0 | 0.342872 |  0.731905 | 0.341766 | 02/02/2023 15:07:21.68 |
+|   1 | A    | V    |   1 |  0.25941 |  0.493496 | 0.434559 | 02/02/2023 15:07:21.88 |
+|   2 | A    | W    |   2 | 0.485956 |  0.550383 | 0.521913 | 02/02/2023 15:07:22.28 |
+|   3 | A    | X    |   3 | 0.210544 |  0.406669 | 0.540021 | 02/02/2023 15:07:22.58 |
+|   4 | B    | U    |   2 | 0.830654 | 0.0386757 | 0.635353 | 02/02/2023 15:07:22.88 |
+|   5 | B    | V    |   3 | 0.187675 |  0.919848 | 0.648574 | 02/02/2023 15:07:23.28 |
+|   6 | B    | W    |   4 | 0.506172 |   0.93743 | 0.554965 | 02/02/2023 15:07:23.58 |
+|   7 | B    | X    |   5 |  0.21009 |  0.829689 | 0.857681 | 02/02/2023 15:07:23.88 |
 
 The code below obfuscates the real column names because I don't want to give away sensitive information. However, It is worth outlining the steps that I am doing in the analysis. These steps include:
-* The conversion of time stamps to `datetime` formats.
-* Grouping data over keys and taking the mean value of the initial `N` samples of some columns.
-* Subtracting those means from different columns.
-* Computing rolling means of some columns and using those computed means to replace data in those rows where the mean is below a certain threshold.
-* Compute a bunch of derived columns that use one or more of the existing columns in some transformation. Those are row wise operations that require no grouping or anything fancy.
+
+- The conversion of time stamps to `datetime` formats.
+- Grouping data over keys and taking the mean value of the initial `N` samples of some columns.
+- Subtracting those means from different columns.
+- Computing rolling means of some columns and using those computed means to replace data in those rows where the mean is below a certain threshold.
+- Compute a bunch of derived columns that use one or more of the existing columns in some transformation. Those are row wise operations that require no grouping or anything fancy.
 
 ## Using `polars`
 
@@ -174,7 +175,7 @@ I do like the chaining of operations, but it makes the code longer and it is a b
 ```
 df["y"] = 123 + df["x"]
 df["z"] = 456 + df["y"]
- ```
+```
 
 in this way (using `polars` ):
 

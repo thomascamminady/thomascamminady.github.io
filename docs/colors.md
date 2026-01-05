@@ -6,18 +6,18 @@ Click on a palette to get a list of lists of hex strings.
 
 Credit goes to [dicopal.js](https://github.com/riatelab/dicopal.js) for compiling the colors from these sources:
 
--   [Colorbrewer2](https://colorbrewer2.org/)
--   [Fabio Crameri's Scientific Colour Maps](https://www.fabiocrameri.ch/colourmaps/)
--   [CARTOColors](https://carto.com/carto-colors/)
--   [cmocean](https://matplotlib.org/cmocean/)
--   [Light & Bartlein](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2004EO400002)
--   [Matplotlib](https://bids.github.io/colormap/)
--   [MyCarta](https://mycartablog.com/color-palettes/)
--   [Tableau](https://help.tableau.com/current/pro/desktop/en-us/formatting_create_custom_colors.htm#hex-values-for-discontinued-color-palettes)
--   [The Wes Anderson Palettes blog](https://wesandersonpalettes.tumblr.com/)
--   [Joshua Stevens' palettes](https://www.joshuastevens.net/)
--   [Masataka Okabe and Kei Ito's Color Universal Design (CUD) categorical palette](https://jfly.uni-koeln.de/color/)
--   [D3 "Observable10" categorical palette](https://d3js.org/d3-scale-chromatic/categorical#schemeObservable10)
+- [Colorbrewer2](https://colorbrewer2.org/)
+- [Fabio Crameri's Scientific Colour Maps](https://www.fabiocrameri.ch/colourmaps/)
+- [CARTOColors](https://carto.com/carto-colors/)
+- [cmocean](https://matplotlib.org/cmocean/)
+- [Light & Bartlein](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2004EO400002)
+- [Matplotlib](https://bids.github.io/colormap/)
+- [MyCarta](https://mycartablog.com/color-palettes/)
+- [Tableau](https://help.tableau.com/current/pro/desktop/en-us/formatting_create_custom_colors.htm#hex-values-for-discontinued-color-palettes)
+- [The Wes Anderson Palettes blog](https://wesandersonpalettes.tumblr.com/)
+- [Joshua Stevens' palettes](https://www.joshuastevens.net/)
+- [Masataka Okabe and Kei Ito's Color Universal Design (CUD) categorical palette](https://jfly.uni-koeln.de/color/)
+- [D3 "Observable10" categorical palette](https://d3js.org/d3-scale-chromatic/categorical#schemeObservable10)
 
 ```js
 const data = FileAttachment("data/palettes.json").json();
