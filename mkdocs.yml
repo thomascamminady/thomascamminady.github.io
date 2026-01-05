@@ -2,6 +2,7 @@ site_name: "Thomas Camminady"
 site_url: https://camminady.dev
 theme:
   name: material
+  custom_dir: overrides
   icon:
     logo: material/account-circle
   font: false
