@@ -1,7 +1,9 @@
-site_name: Website of Thomas Camminady
+site_name: "Thomas Camminady"
 site_url: https://camminady.dev
 theme:
   name: material
+  icon:
+    logo: material/account-circle
   font: false
   features:
     - navigation.tabs
@@ -27,6 +29,9 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji ""
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg ""
   - toc:
       toc_depth: 0
 
