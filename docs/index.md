@@ -1,5 +1,7 @@
 # Hello!
 
+![Thomas Camminady](Thomas_Camminady.jpeg){ align=right width=200 loading=lazy}
+
 Hi, I'm Thomas.
 
 I'm an algorithm developer & data scientist working at [Wahoo Fitness](http://wahoofitness.com), with a [PhD](https://publikationen.bibliothek.kit.edu/1000128846) in applied mathematics from the Karlsruhe Institute of Technology. I studied Computational Engineering Science at RWTH Aachen University.
