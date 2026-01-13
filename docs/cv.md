@@ -1,9 +1,9 @@
 # CV
 
 -   Email: [job@camminady.dev](mailto:job@camminady.dev)
--   Location: Bonn, Germany
 -   LinkedIn: [camminady](https://linkedin.com/in/camminady)
 -   GitHub: [thomascamminady](https://github.com/thomascamminady)
+-   Location: Bonn, Germany
 
 # Professional Summary
 
@@ -13,20 +13,20 @@ I’m an applied mathematician and data scientist with experience in time series
 
 ## Karlsruhe Institute of Technology, Dr. rer. nat. in Applied Mathematics
 
-*Oct 2017 – Jan 2021, Karlsruhe, Germany*
+_Oct 2017 – Jan 2021, Karlsruhe, Germany_
 
 -   Thesis: Theory, models, and numerical methods for classical and non-classical transport.
 
 ## RWTH Aachen University, M.Sc. in Computational Engineering Science (CES)
 
-*Oct 2013 – Mar 2015, Aachen, Germany*
+_Oct 2013 – Mar 2015, Aachen, Germany_
 
 -   Selected Courses: Parallel Computing, Computational Differentiation, Uncertainty Quantification, Combinatorial Problems in Scientific Computing.
 -   Thesis: Theory and application of numerical methods for fractional diffusion equations.
 
 ## RWTH Aachen University, B.Sc. in CES
 
-*Oct 2009 – Sept 2013, Aachen, Germany*
+_Oct 2009 – Sept 2013, Aachen, Germany_
 
 -   Selected Courses: Computational Fluid Dynamics, Aerodynamics, Calculus of Variations, Partial Differential Equations.
 -   Thesis: Improvement of the aerodynamic shape optimization by adjoint methods in an MDO process.
@@ -35,7 +35,7 @@ I’m an applied mathematician and data scientist with experience in time series
 
 ## Wahoo Fitness LLC, Data Scientist & Algorithm Developer
 
-*Mar 2021 – present, Remote from Germany*
+_Mar 2021 – present, Remote from Germany_
 
 -   Launched a **machine learning–driven training recommendation engine** for athletes, enhancing personalized workout strategies.
 -   Developed robust backend APIs using Python and Pydantic, serving thousands of users via AWS.
@@ -47,7 +47,7 @@ I’m an applied mathematician and data scientist with experience in time series
 
 ## Center for CES & Steinbuch Centre for Computing, Scientific Staff
 
-*Apr 2015 – Mar 2021, Aachen & Karlsruhe*
+_Apr 2015 – Mar 2021, Aachen & Karlsruhe_
 
 -   Conducted research in the field of kinetic theory, numerical mathematics, optimization, and machine learning.
 -   **Pioneered reinforcement learning methods** to optimize numerical algorithms in CFD, resulting in significant computational improvements.
@@ -56,21 +56,21 @@ I’m an applied mathematician and data scientist with experience in time series
 
 ## Festival de Théorie, Summer School on Plasmas
 
-*June 2017 – July 2017, Aix-en-Provence, France*
+_June 2017 – July 2017, Aix-en-Provence, France_
 
 -   Implemented magnetic field derivatives into a Fortran DG-MHD research code.
 -   Actively participated in seminars and workshops in the field of plasmas.
 
 ## Center for CES, Student Research Assistant
 
-*Jan 2010 – Mar 2015, Aachen, Germany*
+_Jan 2010 – Mar 2015, Aachen, Germany_
 
 -   Assisted with teaching duties for a variety of mathematics and computer science modules.
 -   Developed **GPU-based Monte Carlo simulations** using CUDA.
 
 ## EADS Cassidian, Internship with Bachelor's Thesis
 
-*Oct 2012 – Apr 2013, Manching, Germany*
+_Oct 2012 – Apr 2013, Manching, Germany_
 
 -   Performed numerical simulations with in-house tools and the adjoint code of the German Aerospace Center (DLR).
 -   Automated **UAV airfoil shape optimization** using mesh adjoints.
