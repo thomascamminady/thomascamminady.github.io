@@ -3,8 +3,8 @@ site_url: https://camminady.dev
 theme:
   name: material
   custom_dir: overrides
-  icon:
-    logo: material/account-circle
+  logo: assets/icon.svg
+  favicon: assets/favicon.svg
   font: false
   features:
     - navigation.tabs
