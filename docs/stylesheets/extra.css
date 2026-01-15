@@ -1,6 +1,1 @@
-/* Hide the left sidebar (navigation) since we have top tabs */
-@media (min-width: 76.25em) {
-    .md-sidebar--primary {
-        display: none;
-    }
-}
+/* Custom styles */
