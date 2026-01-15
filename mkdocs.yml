@@ -4,8 +4,6 @@ theme:
   name: material
   custom_dir: overrides
   font: false
-  features:
-    - navigation.tabs
   palette:
     # Palette toggle for light mode
     - scheme: default
