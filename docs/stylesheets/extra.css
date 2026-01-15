@@ -20,3 +20,9 @@
 .md-footer-meta__inner {
     justify-content: flex-end;
 }
+
+/* Social icon size */
+.md-content .twemoji svg {
+    height: 1.5em;
+    width: 1.5em;
+}
