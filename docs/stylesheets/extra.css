@@ -1,1 +1,4 @@
-/* Custom styles */
+/* Hide the top header bar */
+.md-header {
+    display: none;
+}
