@@ -167,35 +167,35 @@ import polars as pl
 from scipy.optimize import minimize
 
 
-def ansatz(
-    params: np.ndarray,
-    data: pl.DataFrame,
-    model_column: str,
-) -> pl.DataFrame:
-    """Define the model."""
-    return data.with_columns((params[0] * pl.col("test")).alias(model_column))
-
-
-def loss(
-    params: np.ndarray,
-    data: pl.DataFrame,
-    model_column: str,
-    reference_column: str,
-    metric: Callable[[pl.Series, pl.Series], float],
-) -> float:
-    """Eval model and compute loss."""
-    model = ansatz(params, data, model_column)
-    error = metric(model[model_column], data[reference_column])
-    return error
-
-
-def metric(x: pl.Series, y: pl.Series) -> float:
-    """Compute L2 norm between two arrays."""
+def l2_norm(x: pl.Series, y: pl.Series) -> float:
+    """Compute L2 norm of difference between two series."""
     return float(np.linalg.norm(x - y))
 
 
-if __name__ == "__main__":
-    data = pl.DataFrame({"test": [1.0, 2.0, 3.0], "reference": [2.0, 3.0, 4.0]})
-    x0 = np.array([1.0, 1.0])
-    res = minimize(loss, x0, args=(data, "model", "reference", metric))
+def ansatz(
+    params: np.ndarray,
+    df: pl.DataFrame,
+    model_column: str,
+) -> pl.DataFrame:
+    """Define the model."""
+    y_model = params[0] * pl.col("x1") + params[1] * pl.col("x2")
+    return df.with_columns(y_model.alias(model_column))
+
+
+def objective(
+    params: np.ndarray,
+    df: pl.DataFrame,
+    model_column: str,
+    reference_column: str,
+    loss: Callable[[pl.Series, pl.Series], float],
+) -> float:
+    """Evaluate model and compute objective value."""
+    df_with_model = ansatz(params, df, model_column)
+    return loss(df_with_model[model_column], df_with_model[reference_column])
+
+
+df = pl.DataFrame({"x1": [1, 2, 3], "x2": [-1, 2, 3], "y_reference": [2, 3, 4]})
+x0 = np.array([1.0, 2.0])
+result = minimize(objective, x0, args=(df, "y_model", "y_reference", l2_norm))
+print(ansatz(result.x, df, "y_model"))
 ```
