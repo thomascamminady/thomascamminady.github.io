@@ -163,18 +163,17 @@ def dummy(x: CONSTANTS.DISTANCE) -> CONSTANTS.WEIGHT:
 from typing import Callable
 
 import numpy as np
-import pandas as pd
 import polars as pl
 from scipy.optimize import minimize
 
 
 def ansatz(
     params: np.ndarray,
-    df: pl.DataFrame,
+    data: pl.DataFrame,
     model_column: str,
 ) -> pl.DataFrame:
     """Define the model."""
-    return df.with_columns((params[0] * pl.col("test")).alias(model_column))
+    return data.with_columns((params[0] * pl.col("test")).alias(model_column))
 
 
 def loss(
@@ -182,7 +181,7 @@ def loss(
     data: pl.DataFrame,
     model_column: str,
     reference_column: str,
-    metric: Callable[[np.ndarray, np.ndarray], float],
+    metric: Callable[[pl.Series, pl.Series], float],
 ) -> float:
     """Eval model and compute loss."""
     model = ansatz(params, data, model_column)
@@ -190,12 +189,13 @@ def loss(
     return error
 
 
-def metric(x: np.ndarray, y: np.ndarray) -> float:
+def metric(x: pl.Series, y: pl.Series) -> float:
     """Compute L2 norm between two arrays."""
-    return np.linalg.norm(x - y)
+    return float(np.linalg.norm(x - y))
 
 
-data = pl.DataFrame({"test": [1.0, 2, 3], "reference": [2.0, 3, 4]})
-x0 = np.array([1.0, 1.0])
-res = minimize(loss, x0, args=(data, "model", "reference", metric))
+if __name__ == "__main__":
+    data = pl.DataFrame({"test": [1.0, 2.0, 3.0], "reference": [2.0, 3.0, 4.0]})
+    x0 = np.array([1.0, 1.0])
+    res = minimize(loss, x0, args=(data, "model", "reference", metric))
 ```
