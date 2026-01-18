@@ -1,0 +1,28 @@
+/* Hide the top header bar */
+.md-header {
+    display: none;
+}
+
+/* Footer styling */
+.md-footer,
+.md-footer-meta {
+    background-color: var(--md-default-bg-color) !important;
+}
+
+.md-footer-meta,
+.md-footer-meta__inner,
+.md-copyright,
+.md-copyright__highlight,
+.md-footer a {
+    color: var(--md-default-fg-color) !important;
+}
+
+.md-footer-meta__inner {
+    justify-content: flex-end;
+}
+
+/* Social icon size */
+.md-content .twemoji svg {
+    height: 1.5em;
+    width: 1.5em;
+}
