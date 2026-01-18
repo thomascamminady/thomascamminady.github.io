@@ -26,3 +26,15 @@
     height: 1.5em;
     width: 1.5em;
 }
+
+/* Justify text */
+.md-content p {
+    text-align: justify;
+}
+
+/* Hide images on narrow screens */
+@media (max-width: 50em) {
+    .md-content img {
+        display: none;
+    }
+}
