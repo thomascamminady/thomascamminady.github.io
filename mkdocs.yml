@@ -20,6 +20,10 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+extra:
+  analytics:
+    provider: custom
+
 plugins: []
 
 markdown_extensions:
