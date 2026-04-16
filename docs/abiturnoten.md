@@ -6,5 +6,10 @@ The chart shows the share of Abitur graduates in each of the 16 German states (*
 
 ![German Abitur grade bands 2006–2024](assets/good_bad_grades.svg)
 
-Data: [Kultusministerkonferenz (KMK)](https://www.kmk.org/dokumentation-statistik/statistik/schulstatistik/abiturnoten.html). Abiturnoten 2006–2024.
-Analysis and visualisation: Thomas Camminady. Source code on [GitHub](https://github.com/thomascamminady/abiturnoten).
+The animation below shows the full grade distribution (1.0–4.0) for each state, one year at a time.
+
+![Abitur grade distribution by Bundesland, animated](assets/grade_distribution.gif)
+
+Data: [Kultusministerkonferenz (KMK)](https://www.kmk.org/dokumentation-statistik/statistik/schulstatistik/abiturnoten.html). Abiturnoten 2006-2024.
+
+Source code on [GitHub](https://github.com/thomascamminady/abiturnoten).
