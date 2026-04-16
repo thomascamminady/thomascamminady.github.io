@@ -25,7 +25,8 @@ extra:
   analytics:
     provider: custom
 
-plugins: []
+plugins:
+  - glightbox
 
 markdown_extensions:
   - fenced_code
