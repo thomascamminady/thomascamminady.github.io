@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colors · Thomas Camminady</title>
+    <meta name="description" content="Thomas Camminady, senior data scientist at Wahoo Fitness.">
+    <link rel="canonical" href="https://camminady.dev/colors/">
+    <link rel="icon" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script data-goatcounter="https://drtc.goatcounter.com/count" async="" src="https://gc.zgo.at/count.js"></script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+        </style></head>
+<body>
+    <header class="site-header">
+        <a href="..">Thomas Camminady</a>
+    </header>
+    <main>
+        <h1 id="colors">Colors</h1>
+<p>Click on a palette to get a list of lists of hex strings.</p>
+<h3 id="credit">Credit</h3>
+<p>Credit goes to <a href="https://github.com/riatelab/dicopal.js">dicopal.js</a> for compiling the colors from these sources:</p>
+<ul>
+<li><a href="https://colorbrewer2.org/">Colorbrewer2</a></li>
+<li><a href="https://www.fabiocrameri.ch/colourmaps/">Fabio Crameri's Scientific Colour Maps</a></li>
+<li><a href="https://carto.com/carto-colors/">CARTOColors</a></li>
+<li><a href="https://matplotlib.org/cmocean/">cmocean</a></li>
+<li><a href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2004EO400002">Light &amp; Bartlein</a></li>
+<li><a href="https://bids.github.io/colormap/">Matplotlib</a></li>
+<li><a href="https://mycartablog.com/color-palettes/">MyCarta</a></li>
+<li><a href="https://help.tableau.com/current/pro/desktop/en-us/formatting_create_custom_colors.htm#hex-values-for-discontinued-color-palettes">Tableau</a></li>
+<li><a href="https://wesandersonpalettes.tumblr.com/">The Wes Anderson Palettes blog</a></li>
+<li><a href="https://www.joshuastevens.net/">Joshua Stevens' palettes</a></li>
+<li><a href="https://jfly.uni-koeln.de/color/">Masataka Okabe and Kei Ito's Color Universal Design (CUD) categorical palette</a></li>
+<li><a href="https://d3js.org/d3-scale-chromatic/categorical#schemeObservable10">D3 "Observable10" categorical palette</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">FileAttachment</span><span class="p">(</span><span class="s2">"data/palettes.json"</span><span class="p">).</span><span class="nx">json</span><span class="p">();</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"grid"</span><span class="p">;</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">gridTemplateColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"repeat(4, 1fr)"</span><span class="p">;</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"20px"</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"observablehq-main"</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">cartocolors</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(([</span><span class="nx">paletteName</span><span class="p">,</span><span class="w"> </span><span class="nx">paletteData</span><span class="p">])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">paletteContainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">paletteContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"flex"</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">paletteContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">flexDirection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"column"</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">paletteContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">cursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"pointer"</span><span class="p">;</span><span class="w"> </span><span class="c1">// indicates clickable</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"h3"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">title</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">paletteName</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">paletteContainer</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Build the rows of color squares</span>
+<span class="w">    </span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">paletteData</span><span class="p">.</span><span class="nx">values</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(([</span><span class="nx">level</span><span class="p">,</span><span class="w"> </span><span class="nx">colors</span><span class="p">])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">row</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"flex"</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">row</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">marginBottom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"5px"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="nx">colors</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">color</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">square</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"20px"</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">square</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"20px"</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">square</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">color</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">square</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">marginRight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"2px"</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">row</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">square</span><span class="p">);</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">        </span><span class="nx">paletteContainer</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="c1">// When the palette is clicked, copy the list of hex values to the clipboard.</span>
+<span class="w">    </span><span class="nx">paletteContainer</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Extract the list of lists of hex strings from the palette</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">hexLists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">paletteData</span><span class="p">.</span><span class="nx">values</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">textToCopy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">hexLists</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+
+<span class="w">        </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">clipboard</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">writeText</span><span class="p">(</span><span class="nx">textToCopy</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Create a temporary alert element</span>
+<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">alertBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
+<span class="w">                </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Copied palettes to clipboard."</span><span class="p">;</span>
+<span class="w">                </span><span class="c1">// Basic styling for the alert box</span>
+<span class="w">                </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"20px"</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"50%"</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"translateX(-50%)"</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#333"</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#fff"</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">padding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"10px 20px"</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">borderRadius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"4px"</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">zIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000</span><span class="p">;</span>
+<span class="w">                </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">alertBox</span><span class="p">);</span>
+
+<span class="w">                </span><span class="c1">// Remove the alert box after 500 milliseconds</span>
+<span class="w">                </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">alertBox</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+<span class="w">                </span><span class="p">},</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span>
+<span class="w">            </span><span class="p">})</span>
+<span class="w">            </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">"Error copying text: "</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">));</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="nx">container</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">paletteContainer</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+    </main>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body></html>
