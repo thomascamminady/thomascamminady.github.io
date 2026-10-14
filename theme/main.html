@@ -1,0 +1,40 @@
+{%- import "partials/icons.html" as icons -%}
+{%- set is_home = page and page.is_homepage -%}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page and page.title and not is_home %}{{ page.title | striptags }} · {% endif %}{{ config.site_name }}</title>
+    {%- if config.site_description %}
+    <meta name="description" content="{{ config.site_description }}">
+    {%- endif %}
+    {%- if page and page.canonical_url %}
+    <link rel="canonical" href="{{ page.canonical_url }}">
+    {%- endif %}
+    <link rel="icon" href="{{ 'assets/favicon.png' | url }}">
+    <link rel="stylesheet" href="{{ 'css/style.css' | url }}">
+    <script data-goatcounter="https://drtc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body{% if is_home %} class="home"{% endif %}>
+    {%- if not is_home %}
+    <header class="site-header">
+        <a href="{{ '.' | url }}">{{ config.site_name }}</a>
+    </header>
+    {%- endif %}
+    <main>
+        {% block content %}{{ page.content }}{% endblock %}
+        {%- if is_home %}
+        <nav class="links">
+            {%- for link in config.extra.links %}
+            {%- if link.icon %}
+            <a href="{{ link.url | url }}" aria-label="{{ link.name }}" title="{{ link.name }}">{{ icons.svg(link.icon) }}</a>
+            {%- else %}
+            <a href="{{ link.url | url }}">{{ link.name }}</a>
+            {%- endif %}
+            {%- endfor %}
+        </nav>
+        {%- endif %}
+    </main>
+</body>
+</html>

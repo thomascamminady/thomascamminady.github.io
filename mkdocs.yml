@@ -1,48 +1,40 @@
 site_name: "Thomas Camminady"
 site_url: https://camminady.dev
+site_description: "Thomas Camminady, senior data scientist at Wahoo Fitness."
+
+# Minimal custom theme, see theme/. It renders no navigation: every page in
+# docs/ is still built at its usual URL, the homepage links (below) are the
+# only way in.
 theme:
-  name: material
-  custom_dir: overrides
-  font: false
-  favicon: assets/favicon.png
-  palette:
-    # Palette toggle for light mode
-    - scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+  name: null
+  custom_dir: theme
+  static_templates:
+    - 404.html
 
-    # Palette toggle for dark mode
-    - scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-
-extra_css:
-  - stylesheets/extra.css
+# Private, git-ignored; never build it even from a local checkout.
+exclude_docs: |
+  getting_married.md
 
 extra:
-  analytics:
-    provider: custom
+  links:
+    - name: GitHub
+      icon: github
+      url: https://github.com/thomascamminady
+    - name: LinkedIn
+      icon: linkedin
+      url: https://www.linkedin.com/in/camminady/
+    - name: Email
+      icon: envelope
+      url: mailto:scarab73_tutors@icloud.com
+    - name: CV
+      url: cv/
+    - name: Projects
+      url: projects/
 
 plugins:
   - glightbox
 
 markdown_extensions:
-  - fenced_code
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.superfences
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji ""
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg ""
-  - toc:
-      toc_depth: 0
-
-nav:
-  - Home: index.md
-  - CV: cv.md
-  - Projects: projects.md
-  - Python: python.md
-  # - Abiturnoten: abiturnoten.md
+  - pymdownx.highlight
+  - pymdownx.superfences

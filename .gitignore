@@ -11,3 +11,6 @@ wheels/
 
 # MkDocs build output
 site/
+
+# Private notes, never published
+getting_married.md
